@@ -29,6 +29,9 @@
 
 Vedi `bin/README.md` per istruzioni di build e creazione release GitHub.
 
+**IMPORTANTE:** per poter scaricare tutti i pacchetti necessari con **Maven**, usare il comando:
+`mvn clean install -DskipTests=true`
+
 ## 📞 Supporto
 
 **Problemi?**

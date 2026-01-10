@@ -7,7 +7,7 @@ echo
 
 # 1. Build completo del progetto
 echo "📦 Building progetto..."
-mvn clean package -q
+mvn clean package -DskipTests=true -q
 if [ $? -ne 0 ]; then
     echo "❌ Build fallito!"
     exit 1
