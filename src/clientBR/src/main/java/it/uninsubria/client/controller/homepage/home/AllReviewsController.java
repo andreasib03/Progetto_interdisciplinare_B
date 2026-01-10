@@ -63,7 +63,7 @@ public class AllReviewsController extends ControllerBase {
     private void updateBookInfo() {
         if (book != null) {
             bookTitleLabel.setText(book.getTitle());
-            bookAuthorLabel.setText("di " + book.getAuthors() + " (" + book.getPublish_date_year() + ")");
+            bookAuthorLabel.setText(book.getAuthors() + " (" + book.getPublish_date_year() + ")");
         }
     }
 
@@ -131,7 +131,7 @@ public class AllReviewsController extends ControllerBase {
     private VBox createReviewBox(Review review) {
         VBox reviewBox = new VBox();
         reviewBox.setSpacing(8.0);
-        reviewBox.setStyle("-fx-border-color: #dee2e6; -fx-border-width: 1; -fx-border-radius: 5; -fx-background-color: #f8f9fa; -fx-padding: 15;");
+        reviewBox.getStyleClass().add("reviewBox");
 
         // Header con utente e stelle
         HBox headerBox = new HBox();
@@ -143,7 +143,7 @@ public class AllReviewsController extends ControllerBase {
             (review.getUser().getName() != null ? review.getUser().getName() : review.getUser().getID()) :
             "Utente anonimo";
         userLabel.setText("👤 " + userName);
-        userLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
+        userLabel.getStyleClass().add("reviewUserLabel");
 
         // Stelle
         Label starsLabel = new Label();
@@ -153,7 +153,7 @@ public class AllReviewsController extends ControllerBase {
                             "☆".repeat(Math.max(0, emptyStars)) +
                             " (" + String.format("%.1f", review.averageScore()) + "/5)";
         starsLabel.setText(starsDisplay);
-        starsLabel.setStyle("-fx-font-size: 16px; -fx-text-fill: #ffc107;");
+        starsLabel.getStyleClass().add("reviewStarsLabel");
 
         headerBox.getChildren().addAll(userLabel, starsLabel);
 
@@ -190,7 +190,7 @@ public class AllReviewsController extends ControllerBase {
         }
 
         Label scoreLabel = new Label(text.toString());
-        scoreLabel.setStyle("-fx-font-size: 12px;");
+        scoreLabel.getStyleClass().add("reviewScoreLabel");
         scoreLabel.setWrapText(true);
         container.getChildren().add(scoreLabel);
     }
@@ -201,7 +201,7 @@ public class AllReviewsController extends ControllerBase {
     private void addNoteOnly(VBox container, String label, String note) {
         if (note != null && !note.trim().isEmpty()) {
             Label noteLabel = new Label(label + ": " + note);
-            noteLabel.setStyle("-fx-font-size: 12px;");
+            noteLabel.getStyleClass().add("reviewNoteLabel");
             noteLabel.setWrapText(true);
             container.getChildren().add(noteLabel);
         }
@@ -213,7 +213,7 @@ public class AllReviewsController extends ControllerBase {
      */
     private void showNoReviewsMessage() {
         Label noReviewsLabel = new Label(resolveString("%homepage.no.reviews"));
-        noReviewsLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #6c757d; -fx-alignment: center;");
+        noReviewsLabel.getStyleClass().add("reviewNoReviewsLabel");
         reviewsContainer.getChildren().add(noReviewsLabel);
     }
 

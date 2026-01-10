@@ -25,8 +25,8 @@ public enum EveryView {
 
     RATING_VIEW("/fxml/views/library/ValutazioneView.fxml"),
 
-    PDF_MANUAL_USER("/pdf/Manuale_utente.pdf"),
-    PDF_MANUAL_TECNICAL("/pdf/Manuale_tecnico.pdf"),
+    PDF_MANUAL_USER("/pdf/Manuale_Utente.pdf"),
+    PDF_MANUAL_TECNICAL("/pdf/Manuale_Tecnico.pdf"),
 
     CSS_GENERAL("/css/CommonFeatures.css"),
     CSS_DARKMODE("/css/DarkMode.css"),

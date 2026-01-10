@@ -74,8 +74,8 @@ public class viewAbouts extends ControllerBase {
     
 
     private void initializeSearchActions(){
-        vboxActions.put(vboxDocsUtente, () -> salvaEApriPdf(EveryView.PDF_MANUAL_USER.getPath(), "Manuale_utente"));
-        vboxActions.put(vboxDocsTecnico, () -> salvaEApriPdf(EveryView.PDF_MANUAL_TECNICAL.getPath(), "Manuale_tecnico"));
+        vboxActions.put(vboxDocsUtente, () -> salvaEApriPdf(EveryView.PDF_MANUAL_USER.getPath(), "Manuale_Utente"));
+        vboxActions.put(vboxDocsTecnico, () -> salvaEApriPdf(EveryView.PDF_MANUAL_TECNICAL.getPath(), "Manuale_Tecnico"));
         vboxActions.put(vboxFeedback, () -> Navigator.openNewWindow(EveryView.FORM_CONTACT.getPath(), resolveString("%help.feedback")));
         vboxActions.put(vboxVideo, () -> Navigator.openNewWindow(EveryView.VIDEO_VIEW.getPath(), resolveString("%help.video")));
         vboxActions.put(vboxFAQ, () -> Navigator.openNewWindow(EveryView.FAQ_VIEW.getPath(), resolveString("%help.faq")));

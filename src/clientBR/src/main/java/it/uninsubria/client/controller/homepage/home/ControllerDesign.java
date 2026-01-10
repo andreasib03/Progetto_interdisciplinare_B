@@ -584,16 +584,6 @@ public class ControllerDesign extends ControllerBase {
                 recommendationsContent.setVisible(false);
         });
     }
-
-    private void hideRecommendationsLoading() {
-        Platform.runLater(() -> {
-            if (recommendationsLoadingIndicator != null)
-                recommendationsLoadingIndicator.setVisible(false);
-            if (recommendationsContent != null)
-                recommendationsContent.setVisible(true);
-        });
-    }
-
     /**
      * Carica e mostra le raccomandazioni di base per l'utente
      */
@@ -624,7 +614,7 @@ public class ControllerDesign extends ControllerBase {
             if (books == null || books.isEmpty()) {
                 // Nessuna raccomandazione disponibile
                 Label noRecommendationsLabel = new Label(resolveString("%design.no.recommendations.available"));
-                noRecommendationsLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #7f8c8d; -fx-font-style: italic;");
+                noRecommendationsLabel.getStyleClass().add("noRecommendationsLabel");
                 recommendationsContent.getChildren().add(noRecommendationsLabel);
                 return;
             }
@@ -649,15 +639,14 @@ public class ControllerDesign extends ControllerBase {
         card.setPrefWidth(140);
         card.setPrefHeight(180);
         card.setAlignment(Pos.TOP_CENTER);
-        card.setStyle(
-                "-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #e0e0e0; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8; -fx-cursor: hand;");
+        card.getStyleClass().add("recommendationCard");
 
         // Immagine del libro (placeholder)
         ImageView bookImage = new ImageView(ResourceCache.getImage(EveryView.TEST_IMAGE.getPath()));
         bookImage.setFitWidth(100);
         bookImage.setFitHeight(120);
         bookImage.setPreserveRatio(true);
-        bookImage.setStyle("-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);");
+        bookImage.getStyleClass().add("recommendationBookImage");
 
         // Titolo del libro (troncato)
         Label titleLabel = new Label();
@@ -666,8 +655,7 @@ public class ControllerDesign extends ControllerBase {
             title = title.substring(0, 12) + "...";
         }
         titleLabel.setText(title);
-        titleLabel.setStyle(
-                "-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #2c3e50; -fx-text-alignment: center;");
+        titleLabel.getStyleClass().add("recommendationTitleLabel");
         titleLabel.setWrapText(true);
         titleLabel.setMaxWidth(120);
         titleLabel.setAlignment(Pos.CENTER);
@@ -679,20 +667,10 @@ public class ControllerDesign extends ControllerBase {
             authors = authors.substring(0, 9) + "...";
         }
         authorLabel.setText(authors != null ? authors : resolveString("%design.book.unknown.author"));
-        authorLabel.setStyle("-fx-font-size: 9px; -fx-text-fill: #7f8c8d; -fx-text-alignment: center;");
+        authorLabel.getStyleClass().add("recommendationAuthorLabel");
         authorLabel.setWrapText(true);
         authorLabel.setMaxWidth(120);
         authorLabel.setAlignment(Pos.CENTER);
-
-        // Hover effects
-        card.setOnMouseEntered(event -> {
-            card.setStyle(
-                    "-fx-background-color: #f8f9fa; -fx-background-radius: 8; -fx-border-color: #3498db; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8; -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.2), 6, 0, 0, 3); -fx-cursor: hand;");
-        });
-        card.setOnMouseExited(event -> {
-            card.setStyle(
-                    "-fx-background-color: #ffffff; -fx-background-radius: 8; -fx-border-color: #e0e0e0; -fx-border-radius: 8; -fx-border-width: 1; -fx-padding: 8; -fx-cursor: hand;");
-        });
 
         // Click handler per aprire il dettaglio libro
         card.setOnMouseClicked(event -> openBookDetail(book));
@@ -742,38 +720,56 @@ public class ControllerDesign extends ControllerBase {
             return List.of();
         }
 
-        final String normalizedQuery = query.toLowerCase().trim();
+        // Normalizza la query come viene fatto per l'indice
+        String normalizedQuery = query.toLowerCase()
+                .replaceAll("[^a-z0-9\\s]", " ")
+                .trim();
+        final String[] queryTokens = normalizedQuery.split("\\s+");
+        final String cacheKey = "query:" + normalizedQuery.replaceAll("\\s+", "_");
 
         // Check TTL-based cache
-        List<Book> cached = ClientCacheManager.get("query:" + normalizedQuery);
+        List<Book> cached = ClientCacheManager.get(cacheKey);
         if (cached != null) {
             return cached;
         }
 
-        // Prima cerca negli autori (più specifico)
-        List<Book> authorResults = authorIndex.entrySet().stream()
-                .filter(entry -> entry.getKey().contains(normalizedQuery))
-                .flatMap(entry -> entry.getValue().stream())
-                .distinct()
-                .limit(100)
-                .collect(Collectors.toList());
+        // Cerca negli indici - richiede che TUTTI i token siano presenti
+        Set<Book> combined = new HashSet<>();
 
-        // Poi cerca nei titoli e altri campi
-        List<Book> titleResults = invertedIndex.entrySet().stream()
-                .filter(e -> e.getKey().contains(normalizedQuery))
-                .flatMap(e -> e.getValue().stream())
-                .distinct()
-                .limit(150)
-                .collect(Collectors.toList());
+        // Cerca negli autori
+        for (Map.Entry<String, List<Book>> entry : authorIndex.entrySet()) {
+            String key = entry.getKey();
+            boolean match = true;
+            for (String token : queryTokens) {
+                if (!key.contains(token)) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) {
+                combined.addAll(entry.getValue().stream().limit(50).collect(Collectors.toList()));
+            }
+        }
 
-        // Combina risultati, dando priorità agli autori
-        Set<Book> combined = new HashSet<>(authorResults);
-        combined.addAll(titleResults);
+        // Cerca nei titoli e altri campi
+        for (Map.Entry<String, List<Book>> entry : invertedIndex.entrySet()) {
+            String key = entry.getKey();
+            boolean match = true;
+            for (String token : queryTokens) {
+                if (!key.contains(token)) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) {
+                combined.addAll(entry.getValue().stream().limit(50).collect(Collectors.toList()));
+            }
+        }
 
         List<Book> result = combined.stream().limit(200).collect(Collectors.toList());
 
         // Cache with TTL
-        ClientCacheManager.put("query:" + normalizedQuery, result);
+        ClientCacheManager.put(cacheKey, result);
         return result;
     }
 
@@ -786,8 +782,12 @@ public class ControllerDesign extends ControllerBase {
             return List.of();
         }
 
-        final String normalizedQuery = query.toLowerCase().trim();
-        final String cacheKey = cachePrefix + ":" + normalizedQuery + (year != -1 ? ":" + year : "");
+        // Normalizza la query come viene fatto per l'indice
+        String normalizedQuery = query.toLowerCase()
+                .replaceAll("[^a-z0-9\\s]", " ")
+                .trim();
+        final String[] queryTokens = normalizedQuery.split("\\s+");
+        final String cacheKey = cachePrefix + ":" + normalizedQuery.replaceAll("\\s+", "_") + (year != -1 ? ":" + year : "");
 
         // Controlla cache TTL-based
         List<Book> cached = ClientCacheManager.get(cacheKey);
@@ -795,13 +795,21 @@ public class ControllerDesign extends ControllerBase {
             return cached;
         }
 
-        // Cerca usando l'indice specificato
+        // Cerca usando l'indice - verifica che ogni token sia presente nella chiave
         List<Book> results = index.entrySet().stream()
-                .filter(entry -> entry.getKey().contains(normalizedQuery))
+                .filter(entry -> {
+                    String key = entry.getKey();
+                    // La chiave deve contenere TUTTI i token della query
+                    for (String token : queryTokens) {
+                        if (!key.contains(token)) {
+                            return false;
+                        }
+                    }
+                    return true;
+                })
                 .flatMap(entry -> entry.getValue().stream())
                 .distinct()
-                .filter(book -> year == -1 || (requireExactYear ? book.getPublish_date_year() == year
-                        : book.getPublish_date_year() == year))
+                .filter(book -> year == -1 || book.getPublish_date_year() == year)
                 .limit(100)
                 .collect(Collectors.toList());
 
@@ -1075,9 +1083,11 @@ public class ControllerDesign extends ControllerBase {
                     contenitorIconLoginProfile);
             session.applyProfileImage(profileImageView);
             session.addProfileImageListener(f -> session.applyProfileImage(profileImageView));
+            updateUserMenu();
         } else {
             UIHelpers.updateToNotLogged(profileImageView, loginRegisterButton, iconLoginProfile,
                     contenitorIconLoginProfile);
+            updateUserMenu();
         }
     }
 
@@ -1103,26 +1113,34 @@ public class ControllerDesign extends ControllerBase {
 
     @FXML
     private void handleLogout() {
-        // Prima invalida la sessione lato server
-        String token = SessionManager.getInstance().getSessionToken();
+        SessionManager session = SessionManager.getInstance();
+
+        // Logout locale IMMEDIATO - non aspettare il server
+        session.logout();
+
+        // Naviga subito alla scena principale
+        Navigator.goToMainScene();
+
+        // Poi invalida la sessione lato server in background (non blocca l'UI)
+        String token = session.getSessionToken();
         if (token != null && !token.isEmpty()) {
-            try {
-                ServiceLocator.getUserService().invalidateSession(token);
-                logger.info("Sessione invalidata lato server");
-            } catch (Exception e) {
-                logger.warning("Errore nell'invalidazione della sessione lato server: " + e.getMessage());
-                // Continua comunque con il logout locale
-            }
+            new Thread(() -> {
+                try {
+                    ServiceLocator.getUserService().invalidateSession(token);
+                    logger.info("Sessione invalidata lato server");
+                } catch (Exception e) {
+                    logger.warning("Errore nell'invalidazione sessione server: " + e.getMessage());
+                }
+
+                // Cleanup backup in background dopo l'invalidazione
+                try {
+                    it.uninsubria.client.controller.homepage.libreria.LibraryListController.cleanupOldUserBackup();
+                } catch (Exception e) {
+                    logger.warning("Errore cleanup backup: " + e.getMessage());
+                }
+            }).start();
         }
 
-        // Pulisci i backup delle librerie dell'utente precedente
-        it.uninsubria.client.controller.homepage.libreria.LibraryListController.cleanupOldUserBackup();
-
-        // Poi fai logout locale
-        SessionManager.getInstance().logout();
-        updateUserInfoUI();
-        updateUserMenu();
-        Navigator.goToMainScene();
         logger.info("Utente disconnesso");
     }
 
@@ -1253,44 +1271,18 @@ public class ControllerDesign extends ControllerBase {
     }
 
     /**
-     * Aggiorna il menu utente con la lista degli utenti disponibili
+     * Aggiorna il menu utente - mostra solo logout quando loggato
      */
     private void updateUserMenu() {
-        // Rimuovi tutti gli elementi esistenti tranne il logout
-        iconLoginProfile.getItems().removeIf(item -> !item.getText().equals(resolveString("%controllerdesign.logout")));
+        SessionManager session = SessionManager.getInstance();
 
-        // Aggiungi voci per switchare tra utenti
-        var userSessions = SessionManager.getInstance().getAllUserSessions();
-        if (userSessions.size() > 1) { // Solo se ci sono più utenti
-            // Aggiungi separatore
-            var separator = new SeparatorMenuItem();
-            iconLoginProfile.getItems().add(0, separator);
-
-            // Aggiungi voci per ogni utente
-            for (var session : userSessions) {
-                if (!session.getUserId().equals(SessionManager.getInstance().getActiveUserId())) {
-                    var switchItem = new MenuItem(
-                            "Passa a " + (session.getUsername() != null ? session.getUsername() : session.getEmail()));
-                    switchItem.setOnAction(e -> switchToUser(session.getUserId()));
-                    iconLoginProfile.getItems().add(0, switchItem);
-                }
-            }
-
-            // Aggiungi header
-            var headerItem = new MenuItem(resolveString("%controllerdesign.available.accounts"));
-            headerItem.setDisable(true);
-            iconLoginProfile.getItems().add(0, headerItem);
+        if (session.isLoggedIn()) {
+            iconLoginProfile.getItems().clear();
+            iconLoginProfile.getItems().add(logoutMenuItem);
+        } else {
+            UIHelpers.updateToNotLogged(profileImageView, loginRegisterButton, iconLoginProfile,
+                    contenitorIconLoginProfile);
         }
-    }
-
-    /**
-     * Passa a un utente specifico
-     */
-    private void switchToUser(String userId) {
-        SessionManager.getInstance().switchToUser(userId);
-        updateUserInfoUI();
-        updateUserMenu();
-        logger.info(java.text.MessageFormat.format(resolveString("%design.log.info.user.switched"), userId));
     }
 
     @Override

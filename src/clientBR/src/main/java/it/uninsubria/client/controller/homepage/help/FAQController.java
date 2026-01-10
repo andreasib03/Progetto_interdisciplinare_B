@@ -38,17 +38,11 @@ public class FAQController {
             for(TitledPane pane : accordion.getPanes()) {
                 if (pane == newPane) {
                     Node content = pane.lookup(".title"); // cerca il nodo interno con la classe CSS
-                    if (content != null) 
-                        content.setStyle("-fx-background-radius: 10 10 0 0;");  
-                } else {
-                    Node content = pane.lookup(".title");
-                    if (content != null) 
-                        content.setStyle("-fx-background-radius: 10;");  
                 }
-            }
             
-            if (oldPane == newPane) {
+                if (oldPane == newPane) {
                 accordion.setExpandedPane(null); // permette richiudere con click
+                }
             }
         });
     }

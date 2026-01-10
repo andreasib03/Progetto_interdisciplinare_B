@@ -1,10 +1,12 @@
 package it.uninsubria.client.controller.homepage;
 
 import it.uninsubria.client.controller.ControllerBase;
+import it.uninsubria.client.utils.classesUI.ParametrizedController;
 import it.uninsubria.shared.model.Book;
 import it.uninsubria.shared.utils.AppConstants;
 import it.uninsubria.client.utils.classesUI.ServiceLocator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.logging.Logger;
 import javafx.application.Platform;
@@ -22,7 +24,7 @@ import javafx.stage.Stage;
  * Usato quando si accede dalla finestra "Nessuna recensione disponibile".
  * Ora mostra anche suggerimenti di libri simili.
  */
-public class BookDetailSimpleController extends ControllerBase {
+public class BookDetailSimpleController extends ControllerBase implements ParametrizedController {
 
     private static final Logger logger = Logger.getLogger(BookDetailSimpleController.class.getName());
 
@@ -58,6 +60,16 @@ public class BookDetailSimpleController extends ControllerBase {
         closeButton.setOnAction(e -> closeWindow());
     }
 
+    @Override
+    public void initData(Map<String, Object> params) {
+        if (params != null && params.containsKey("book")) {
+            Object bookParam = params.get("book");
+            if (bookParam instanceof Book) {
+                setBook((Book) bookParam);
+            }
+        }
+    }
+
     /**
      * Imposta il libro da visualizzare
      */
@@ -75,7 +87,7 @@ public class BookDetailSimpleController extends ControllerBase {
 
         // Titolo e autore
         bookTitleLabel.setText(currentBook.getTitle());
-        bookAuthorLabel.setText("di " + (currentBook.getAuthors() != null ? currentBook.getAuthors() : resolveString("%bookdetail.unknown.author")));
+        bookAuthorLabel.setText(currentBook.getAuthors() != null ? currentBook.getAuthors() : resolveString("%bookdetail.unknown.author"));
 
         // Anno pubblicazione
         if (currentBook.getPublish_date_year() > 0) {
@@ -160,7 +172,7 @@ public class BookDetailSimpleController extends ControllerBase {
             titleLabel.getStyleClass().add("suggestion-title");
             titleLabel.setWrapText(true);
 
-            Label authorLabel = new Label("di " + (suggestion.getAuthors() != null ? suggestion.getAuthors() : resolveString("%bookdetail.unknown.author")));
+            Label authorLabel = new Label((suggestion.getAuthors() != null ? suggestion.getAuthors() : resolveString("%bookdetail.unknown.author")));
             authorLabel.getStyleClass().add("suggestion-author");
             authorLabel.setWrapText(true);
 

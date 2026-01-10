@@ -252,14 +252,6 @@ public class DBInitializer{
                 logger.warning("Errore during ensureSchemaSync: " + e.getMessage());
             }
 
-            // Initialize user interactions schema for recommendations (sempre, anche su DB esistenti)
-            try {
-                initializeUserInteractionsSchema(conn);
-            } catch (SQLException e) {
-                logger.severe("❌ ERRORE CRITICO nell'inizializzazione schema user_interactions: " + e.getMessage());
-                throw e; // Rilancia per bloccare l'avvio se manca questa tabella essenziale
-            }
-
             if(DataSeeder.isBooksTableEmpty(conn)){
                 DataSeeder.seedBooksFromCSV(conn);
             }
@@ -274,71 +266,6 @@ public class DBInitializer{
                     logger.warning("Errore nella chiusura della connessione: " + e.getMessage());
                 }
             }
-        }
-    }
-
-    /**
-     * Initialize user interactions schema for recommendation system
-     * Verifica se la tabella esiste già prima di crearla
-     */
-    private static void initializeUserInteractionsSchema(Connection conn) throws SQLException {
-        logger.info("🔍 Verifica/inizializzazione schema user_interactions per il sistema di raccomandazioni...");
-
-        try {
-            // Verifica se la tabella user_interactions esiste già
-            try (Statement checkStmt = conn.createStatement();
-                 ResultSet rs = checkStmt.executeQuery(
-                     "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'user_interactions')")) {
-
-                if (rs.next() && rs.getBoolean(1)) {
-                    logger.info("✅ Tabella user_interactions già esistente - skip inizializzazione.");
-                    return;
-                }
-            }
-
-            logger.info("📝 Tabella user_interactions non trovata, procedo con la creazione...");
-
-            // Verifica che il file SQL esista
-            var resourceStream = DBInitializer.class.getClassLoader().getResourceAsStream("user_interactions_schema.sql");
-            if (resourceStream == null) {
-                throw new SQLException("File user_interactions_schema.sql non trovato nelle risorse!");
-            }
-
-            // Leggi il file SQL
-            String sql;
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(resourceStream))) {
-                sql = reader.lines().collect(Collectors.joining("\n"));
-            }
-
-            if (sql == null || sql.trim().isEmpty()) {
-                throw new SQLException("File user_interactions_schema.sql è vuoto!");
-            }
-
-            logger.info("📄 Schema SQL letto (" + sql.length() + " caratteri), eseguo creazione tabella...");
-
-            // Esegui lo schema SQL
-            try (Statement stmt = conn.createStatement()) {
-                stmt.execute(sql);
-                logger.info("✅ Schema user_interactions inizializzato con successo!");
-
-                // Verifica che la tabella sia stata creata
-                try (Statement verifyStmt = conn.createStatement();
-                     ResultSet verifyRs = verifyStmt.executeQuery(
-                        "SELECT EXISTS (SELECT 1 FROM information_schema.tables WHERE table_name = 'user_interactions')")) {
-                    if (verifyRs.next() && verifyRs.getBoolean(1)) {
-                        logger.info("✅ Verifica creazione tabella user_interactions: SUCCESSO");
-                    } else {
-                        throw new SQLException("Tabella user_interactions non trovata dopo la creazione!");
-                    }
-                }
-            }
-
-        } catch (Exception e) {
-            logger.severe("❌ ERRORE nell'inizializzazione schema user_interactions: " + e.getMessage());
-            if (e.getCause() != null) {
-                logger.severe("   Causa: " + e.getCause().getMessage());
-            }
-            throw new SQLException("Failed to initialize user_interactions schema: " + e.getMessage(), e);
         }
     }
 

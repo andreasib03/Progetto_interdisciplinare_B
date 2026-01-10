@@ -79,7 +79,6 @@ public class CategoryDetailController extends ControllerBase implements Initiali
     @FXML private TextField searchField;
     @FXML private ComboBox<String> sortComboBox;
     @FXML private ListView<Book> booksListView;
-    @FXML private Button backButton;
     @FXML private Button resetFiltersButton;
     @FXML private Button reloadButton;
     @FXML private VBox emptyStateContainer;
@@ -152,11 +151,6 @@ public class CategoryDetailController extends ControllerBase implements Initiali
      * Initializes buttons, search fields, combo boxes, and list views.
      */
     private void setupUI() {
-        // Setup back button
-        FontIcon backIcon = new FontIcon("fas-arrow-left");
-        backIcon.setIconSize(16);
-        backButton.setGraphic(backIcon);
-        backButton.setOnAction(e -> goBackToCategories());
 
         // Setup search field with fallback
         try {
@@ -209,7 +203,6 @@ public class CategoryDetailController extends ControllerBase implements Initiali
      */
     private void initializeUITexts() {
         try {
-            backButton.setText(resolveString("%categories.back.button"));
             categoryTitleLabel.setText(resolveString("%categories.title.loading"));
             statsLabel.setText(resolveString("%categories.stats.loading"));
             resetFiltersButton.setText(resolveString("%categories.reset"));
@@ -247,7 +240,15 @@ public class CategoryDetailController extends ControllerBase implements Initiali
         CompletableFuture.supplyAsync(() -> {
             try {
                 Map<String, List<Book>> categoryIndex = ControllerDesign.getCategories();
-                List<Book> books = categoryIndex.getOrDefault(currentCategory.toLowerCase(), new ArrayList<>());
+                // Cerca la categoria ignorando maiuscole/minuscole
+                String searchKey = currentCategory.toLowerCase();
+                List<Book> books = new ArrayList<>();
+                for (Map.Entry<String, List<Book>> entry : categoryIndex.entrySet()) {
+                    if (entry.getKey().equalsIgnoreCase(currentCategory)) {
+                        books = entry.getValue();
+                        break;
+                    }
+                }
                 logger.fine("Retrieved " + books.size() + " books for category: " + currentCategory);
                 return books;
             } catch (Exception e) {
@@ -448,7 +449,6 @@ public class CategoryDetailController extends ControllerBase implements Initiali
         private final Label yearLabel;
         private final Label descriptionLabel;
         private Button viewDetailsButton;
-        private Button addToLibraryButton;
 
         /**
          * Creates a new book list cell with all UI components initialized.
@@ -491,28 +491,10 @@ public class CategoryDetailController extends ControllerBase implements Initiali
                 });
             }
 
-            try {
-                addToLibraryButton = createStyledButton(resolveString("%categories.detail.add.to.library"), null);
-            } catch (Exception e) {
-                addToLibraryButton = createStyledButton("Add to Library", null);
-            }
-            if (addToLibraryButton != null) {
-                addToLibraryButton.getStyleClass().add("categoryBookButton");
-                addToLibraryButton.setOnAction(e -> {
-                    Book book = getItem();
-                    if (book != null) {
-                        addBookToLibrary(book);
-                    }
-                });
-            }
-
             HBox buttonBox = new HBox(5);
             buttonBox.setAlignment(Pos.CENTER_RIGHT);
             if (viewDetailsButton != null) {
                 buttonBox.getChildren().add(viewDetailsButton);
-            }
-            if (addToLibraryButton != null) {
-                buttonBox.getChildren().add(addToLibraryButton);
             }
 
             content.getChildren().addAll(titleLabel, authorLabel, yearLabel, descriptionLabel, buttonBox);
@@ -527,7 +509,7 @@ public class CategoryDetailController extends ControllerBase implements Initiali
                 setGraphic(null);
             } else {
                 titleLabel.setText(book.getTitle());
-                authorLabel.setText(resolveString("%categories.detail.book.by") + " " + book.getAuthors());
+                authorLabel.setText(book.getAuthors());
 
                 String yearText;
                 try {
@@ -699,10 +681,10 @@ public class CategoryDetailController extends ControllerBase implements Initiali
                 // Navigate to book detail view
                 Map<String, Object> params = new HashMap<>();
                 params.put("book", book);
-                Navigator.goTo(EveryView.BOOK_DETAIL_SIMPLE.getPath(), params);
-                 } catch (Exception e) {
-                     CategoryDetailController.this.showErrorAlert("Impossibile visualizzare i dettagli del libro: " + e.getMessage());
-                 }
+                Navigator.openNewWindow(EveryView.BOOK_DETAIL_SIMPLE.getPath(), "", params);
+                  } catch (Exception e) {
+                      CategoryDetailController.this.showErrorAlert("Impossibile visualizzare i dettagli del libro: " + e.getMessage());
+                  }
          }
 
     }
@@ -712,11 +694,6 @@ public class CategoryDetailController extends ControllerBase implements Initiali
      */
     private void setupMinimalUI() {
         try {
-            // Setup back button with minimal configuration
-            FontIcon backIcon = new FontIcon("fas-arrow-left");
-            backIcon.setIconSize(16);
-            backButton.setGraphic(backIcon);
-            backButton.setOnAction(e -> goBackToCategories());
 
             // Setup basic search field
             searchField.setPromptText("Search books...");

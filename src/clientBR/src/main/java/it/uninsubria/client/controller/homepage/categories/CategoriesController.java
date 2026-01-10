@@ -144,6 +144,7 @@ public class CategoriesController extends ControllerBase implements Initializabl
             SortOption.NAME_DESC.getLocalizedString()
         ));
         sortComboBox.setValue(SortOption.BOOK_COUNT_DESC.getLocalizedString());
+        sortComboBox.getStyleClass().add("categoriesComboBox");
 
         // Setup reset filters button
         Button resetFiltersButton = new Button(resolveString("%categories.reset"));
@@ -573,7 +574,6 @@ public class CategoriesController extends ControllerBase implements Initializabl
 
             // View button
             Button viewButton = new Button(resolveString("%categories.button"));
-            viewButton.setVisible(false);
             viewButton.getStyleClass().add("categoriesButtonPrimary");
             viewButton.setOnAction(e -> openCategoryDetail(categoryName));
 
@@ -608,13 +608,12 @@ public class CategoriesController extends ControllerBase implements Initializabl
          */
         private void openCategoryDetail(String categoryName) {
             try {
-                // Navigate to the dedicated category detail view instead of showing a dialog
                 Map<String, Object> params = new HashMap<>();
                 params.put("category", categoryName);
                 it.uninsubria.client.utils.classesUI.Navigator.openNewWindow(
-                    it.uninsubria.client.utils.classesUI.EveryView.CATEGORY_DETAIL_VIEW.getPath(), ""
+                    it.uninsubria.client.utils.classesUI.EveryView.CATEGORY_DETAIL_VIEW.getPath(), "", params
                 );
-                
+
             } catch (Exception e) {
                 logger.log(java.util.logging.Level.SEVERE, "Error opening category detail for: " + categoryName, e);
             }

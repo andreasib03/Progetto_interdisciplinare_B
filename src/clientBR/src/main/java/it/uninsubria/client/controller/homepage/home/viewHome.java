@@ -1322,18 +1322,17 @@ public class viewHome extends ControllerBase {
                         // Layout principale
                         VBox mainLayout = new VBox(15);
                         mainLayout.setPadding(new Insets(20));
-                        mainLayout.setStyle("-fx-background-color: #f8f9fa;");
+                        mainLayout.getStyleClass().add("suggestionMainLayout");
 
                         // Header con info del libro
                         Label headerLabel = new Label(resolveString("%viewhome.suggestions.header"));
-                        headerLabel.setStyle("-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;");
-
+                        headerLabel.getStyleClass().add("suggestionHeaderLabel");
                         Label bookInfoLabel = new Label(java.text.MessageFormat.format(resolveString("%viewhome.suggestions.book.info"), book.getTitle(), book.getAuthors()));
-                        bookInfoLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #34495e; -fx-padding: 0 0 10 0;");
+                        bookInfoLabel.getStyleClass().add("suggestionBookInfoLabel");
 
                         // Contenitore per la lista dei libri
                         VBox booksContainer = new VBox(8);
-                        booksContainer.setStyle("-fx-background-color: white; -fx-padding: 15; -fx-border-color: #dee2e6; -fx-border-radius: 5;");
+                        booksContainer.getStyleClass().add("suggestionBooksContainer");
 
                         if (suggestedBooks != null && !suggestedBooks.isEmpty()) {
                             // Rimuovi duplicati
@@ -1348,7 +1347,7 @@ public class viewHome extends ControllerBase {
                                 .collect(java.util.stream.Collectors.toList());
 
                             Label countLabel = new Label(java.text.MessageFormat.format(resolveString("%viewhome.suggestions.found"), uniqueBooks.size()));
-                            countLabel.setStyle("-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #27ae60;");
+                            countLabel.getStyleClass().add("suggestionCountLabel");
                             booksContainer.getChildren().add(countLabel);
 
                             for (int i = 0; i < uniqueBooks.size(); i++) {
@@ -1357,18 +1356,18 @@ public class viewHome extends ControllerBase {
                                 // Crea un HBox per ogni libro con numero e info
                                 HBox bookRow = new HBox(10);
                                 bookRow.setPadding(new Insets(8));
-                                bookRow.setStyle("-fx-background-color: #f8f9fa; -fx-border-color: #e9ecef; -fx-border-radius: 3;");
+                                bookRow.getStyleClass().add("suggestionBookRow");
 
                                 Label numberLabel = new Label((i + 1) + ".");
-                                numberLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #6c757d; -fx-min-width: 25;");
+                                numberLabel.getStyleClass().add("suggestionNumberLabel");
 
                                 VBox bookInfo = new VBox(2);
                                 Label titleLabel = new Label(suggestedBook.getTitle());
-                                titleLabel.setStyle("-fx-font-weight: bold; -fx-text-fill: #2c3e50;");
+                                titleLabel.getStyleClass().add("suggestionTitleLabel");
 
-                                Label authorLabel = new Label(resolveString("%viewhome.suggestions.book.author.prefix") + " " + suggestedBook.getAuthors() +
+                                Label authorLabel = new Label(resolveString("%viewhome.suggestions.book.author.prefix") + suggestedBook.getAuthors() +
                                     (suggestedBook.getPublish_date_year() > 0 ? " (" + suggestedBook.getPublish_date_year() + ")" : ""));
-                                authorLabel.setStyle("-fx-font-size: 11px; -fx-text-fill: #6c757d;");
+                                authorLabel.getStyleClass().add("suggestionAuthorLabel");
 
                                 bookInfo.getChildren().addAll(titleLabel, authorLabel);
                                 bookRow.getChildren().addAll(numberLabel, bookInfo);
@@ -1377,14 +1376,14 @@ public class viewHome extends ControllerBase {
                             }
                         } else {
                             Label noSuggestionsLabel = new Label(resolveString("%viewhome.suggestions.no.books"));
-                            noSuggestionsLabel.setStyle("-fx-font-size: 13px; -fx-text-fill: #6c757d; -fx-text-alignment: center;");
+                            noSuggestionsLabel.getStyleClass().add("suggestionNoBooksLabel");
                             noSuggestionsLabel.setWrapText(true);
                             booksContainer.getChildren().add(noSuggestionsLabel);
                         }
 
                         // Pulsante chiudi
                         Button closeButton = new Button("✅ Chiudi");
-                        closeButton.setStyle("-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 16;");
+                        closeButton.getStyleClass().add("suggestionCloseButton");
                         closeButton.setOnAction(e -> suggestionsStage.close());
                         HBox buttonContainer = new HBox(closeButton);
                         buttonContainer.setAlignment(Pos.CENTER);

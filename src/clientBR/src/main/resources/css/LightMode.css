@@ -16,12 +16,25 @@
     -fx-background-color: #F8FAFC;
 }
 
-.aboutDesc{
-    -fx-text-fill: white;
-}
 
 .aboutDesc{
     -fx-text-fill: black;
+}
+
+.aboutTitle{
+    -fx-text-fill: black;
+}
+
+.vboxWhite{
+    background-color: #FFFFFF;
+    border-color: white;
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: white;
+}
+
+.backgroundAnchorPaneColored{
+    -fx-background-color: #FFFFFF;
+    background-color: #FFFFFF;
 }
 
 
@@ -185,10 +198,6 @@
     -fx-text-fill: #495057;
 }
 
-.categoryEmptyIcon {
-    fill: #bdc3c7;
-    -fx-fill: #bdc3c7;
-}
 
 .categoryEmptyTitle {
     -fx-text-fill: #7f8c8d;
@@ -229,7 +238,6 @@
 .categoryBookButton {
     background-color: #6c757d;
     -fx-background-color: #6c757d;
-    -fx-text-fill: white;
 }
 
 .categoryBookButton:hover {
@@ -360,7 +368,11 @@
 .buttonContact {
     background-color:  #4a90e2;
     -fx-background-color:  #4a90e2;
-    -fx-text-fill: white;
+}
+
+.vboxVignetteHome{
+    border-color:  #f1f1f1;
+    -fx-border-color:  #f1f1f1;
 }
 
 .buttonContact:hover {
@@ -446,6 +458,11 @@
 .title-labelSettings{
     -fx-text-fill: black;
 }
+
+.library-name{
+    -fx-text-fill: black;
+}
+
 
 .textfield-settings{
     background-color: #f4f4f4;
@@ -767,34 +784,8 @@
 .categoriesButtonPrimary {
     background-color: #009dc7;
     -fx-background-color: #009dc7;
-    -fx-text-fill: white;
 }
 
-.categoriesButtonPrimary:hover {
-    background-color: #007ba7;
-    -fx-background-color: #007ba7;
-}
-
-.categoriesButtonPrimary:pressed {
-    background-color: #005a87;
-    -fx-background-color: #005a87;
-}
-
-.categoriesButtonSecondary {
-    background-color: #666;
-    -fx-background-color: #666;
-    -fx-text-fill: white;
-}
-
-.categoriesButtonSecondary:hover {
-    background-color: #555;
-    -fx-background-color: #555;
-}
-
-.categoriesButtonSecondary:pressed {
-    background-color: #333;
-    -fx-background-color: #333;
-}
 
 .categoriesButtonReset {
     background-color: #95a5a6;
@@ -802,22 +793,6 @@
     -fx-text-fill: white;
 }
 
-.categoriesButtonReset:hover {
-    background-color: #7f8f90;
-    -fx-background-color: #7f8f90;
-}
-
-.categoriesButtonReset:pressed {
-    background-color: #6a797a;
-    -fx-background-color: #6a797a;
-}
-
-.categoriesListItem {
-    cursor: hand;
-    padding: 5;
-    -fx-cursor: hand;
-    -fx-padding: 5;
-}
 
 .categoriesTextSecondary {
     -fx-text-fill: #666;
@@ -872,6 +847,11 @@
 .vboxAllReviews {
     background-color: white;
     -fx-background-color: white;
+}
+
+.categoriesComboBox{
+    -fx-background-color: #ffffff;
+    background-color: #ffffff;
 }
 
 .scrollPaneAllReviews{
@@ -1213,6 +1193,8 @@ VBox.suggestionsContainer VBox:hover {
 }
 
 .libraryListView {
+    background-color: transparent;
+    border-color: #e0e0e0;
     -fx-background-color: transparent;
     -fx-border-color: #e0e0e0;
 }
@@ -1223,26 +1205,19 @@ VBox.suggestionsContainer VBox:hover {
 
 .libraryReviewButton {
     -fx-background-color: #3498db;
+    background-color: #3498db;
 }
 
-.librarySuggestButton {
-    -fx-background-color: #e74c3c;
-}
 
-.libraryRemoveButton {
-    -fx-background-color: #95a5a6;
-}
-
-.librarySuggestionsButton {
-    -fx-background-color: #9b59b6;
-}
 
 .libraryButtonPrimary {
     -fx-background-color: #3498db;
+    background-color: #3498db;
 }
 
 .libraryButtonWarning {
     -fx-background-color: #f39c12;
+    background-color: #f39c12;
 }
 
 .libraryTextPrimary {
@@ -1269,4 +1244,111 @@ VBox.suggestionsContainer VBox:hover {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
 }
 
+/* Recommendation Card Styles - Light Mode */
+.noRecommendationsLabel {
+    -fx-text-fill: #7f8c8d;
+}
+
+.recommendationCard {
+    background-color: #ffffff;
+    border-color: #e0e0e0;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+}
+
+.recommendationCard:hover {
+    background-color: #f8f9fa;
+    border-color: #3498db;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.2), 6, 0, 0, 3);
+}
+
+.recommendationBookImage {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+
+.recommendationTitleLabel {
+    -fx-text-fill: #2c3e50;
+    -fx-text-alignment: center;
+}
+
+.recommendationAuthorLabel {
+    -fx-text-fill: #7f8c8d;
+}
+
+/* Suggestion Popup Styles - Light Mode */
+.suggestionMainLayout {
+    -fx-background-color: #f8f9fa;
+    background-color: #f8f9fa;
+}
+
+.suggestionHeaderLabel {
+    -fx-text-fill: #2c3e50;
+}
+
+.suggestionBookInfoLabel {
+    -fx-text-fill: #34495e;
+}
+
+.suggestionBooksContainer {
+    background-color: white;
+    border-color: #dee2e6;
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6;
+}
+
+.suggestionCountLabel {
+    -fx-text-fill: #27ae60;
+}
+
+.suggestionBookRow {
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e9ecef;
+
+}
+
+.suggestionNumberLabel {
+    -fx-text-fill: #6c757d;
+}
+
+.suggestionTitleLabel {
+    -fx-text-fill: #2c3e50;
+}
+
+.suggestionAuthorLabel {
+    -fx-text-fill: #6c757d;
+}
+
+.suggestionNoBooksLabel {
+    -fx-text-fill: #6c757d;
+}
+
+.suggestionCloseButton {
+    background-color: #3498db;
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* All Reviews Styles - Light Mode */
+.reviewBox {
+    border-color: #dee2e6;
+    background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+    -fx-background-color: #f8f9fa;
+}
+
+.categoryBookTitle {
+    -fx-text-fill: black;
+}
+
+.reviewStarsLabel {
+    -fx-text-fill: #ffc107;
+}
+
+.reviewNoReviewsLabel {
+    -fx-text-fill: #6c757d;
+}
 

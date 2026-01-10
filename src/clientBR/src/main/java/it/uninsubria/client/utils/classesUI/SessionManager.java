@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import it.uninsubria.client.utils.classesLogic.ProfileImageListener;
 import it.uninsubria.shared.model.User;
 import it.uninsubria.shared.model.Book;
+import it.uninsubria.shared.rmi.UserService;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -207,23 +208,24 @@ public class SessionManager {
     public void switchToUser(String userId) {
         if (userSessions.containsKey(userId)) {
             UserSession session = userSessions.get(userId);
-            
+             
             // Save current state before switching
             if (activeUserId != null && userSessions.containsKey(activeUserId)) {
                 UserSession currentSession = userSessions.get(activeUserId);
                 currentSession.setProfileImageFile(profileImageFile);
             }
-            
+             
             // Update cache
             sessionCache.setActiveUserId(userId);
-            
+             
             // Load new user
             activeUserId = userId;
             syncLegacyFieldsWithSession(session);
-            
-            // Restart heartbeat
+             
+            // Restart heartbeat (stop first to avoid warning)
+            stopHeartbeat();
             startHeartbeat();
-            
+             
             logger.info("Switched to user: " + (session.getUsername() != null ? session.getUsername() : session.getEmail()));
         }
     }
@@ -235,12 +237,13 @@ public class SessionManager {
         if (userSessions.containsKey(userId)) {
             sessionCache.removeSession(userId);
             userSessions.remove(userId);
-            
+
             if (userId.equals(activeUserId)) {
                 if (!userSessions.isEmpty()) {
                     performCompleteLogout();
                 } else {
-                    switchToUser(userSessions.keySet().iterator().next());
+                    String nextUserId = userSessions.keySet().iterator().next();
+                    switchToUser(nextUserId);
                 }
             }
         }
@@ -251,6 +254,22 @@ public class SessionManager {
      */
     public List<UserSession> getAllUserSessions() {
         return new ArrayList<>(userSessions.values());
+    }
+
+    /**
+     * Get all user sessions with display names for UI (thread-safe copy)
+     */
+    public List<Map.Entry<String, String>> getAllUserSessionsWithNames() {
+        List<Map.Entry<String, String>> result = new ArrayList<>();
+        synchronized (userSessions) {
+            result = userSessions.entrySet().stream()
+                .map(entry -> new java.util.AbstractMap.SimpleEntry<>(
+                    entry.getKey(),
+                    entry.getValue().getUsername() != null ? entry.getValue().getUsername() : entry.getValue().getEmail()
+                ))
+                .collect(java.util.stream.Collectors.toList());
+        }
+        return result;
     }
 
     /**
@@ -328,19 +347,28 @@ public class SessionManager {
     }
 
     public void logout() {
-        if (activeUserId != null) {
-            removeUserSession(activeUserId);
-        } else {
-            performCompleteLogout();
-        }
+        // logout COMPLETO e DEFINITIVO - pulisce tutto indipendentemente dalle sessioni salvate
+        performCompleteLogout();
     }
 
     private void performCompleteLogout() {
+        String token = sessionToken;
+        if (token != null && !token.isEmpty()) {
+            try {
+                UserService userService = ServiceLocator.getUserService();
+                if (userService != null) {
+                    userService.invalidateSession(token);
+                }
+            } catch (Exception e) {
+                logger.warning("Failed to invalidate session on server: " + e.getMessage());
+            }
+        }
+
         stopHeartbeat();
         resetLegacyFields();
-        
-        
-        // Save clean state
+
+        userSessions.clear();
+
         sessionCache.clearAllSessions();
     }
 

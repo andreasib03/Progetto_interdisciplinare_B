@@ -15,7 +15,7 @@
        <VBox alignment="CENTER" prefHeight="700.0" prefWidth="1000.0" spacing="20.0" styleClass="bookdetailsimpleVBOX">
          <children>
             <!-- Header con titolo e pulsante chiudi -->
-             <HBox alignment="CENTER_LEFT" prefHeight="127.0" prefWidth="970.0" spacing="15.0" styleClass="bookdetailsimpleHBOX">
+             <HBox alignment="CENTER_LEFT" prefHeight="127.0" prefWidth="970.0" spacing="15.0" styleClass="bookdetailsimpleHBOX" stylesheets="@../../css/CommonFeatures.css">
                <children>
                    <ScrollPane prefHeight="49.0" prefWidth="830.0" styleClass="bookScrollPane">
                      <content>
@@ -39,7 +39,7 @@
                         </AnchorPane>
                     </content>
                   </ScrollPane>
-                   <Button fx:id="closeButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="116.0" styleClass="allReviewsButton" text="%homepage.allreviews.close" />
+                   <Button fx:id="closeButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="116.0" styleClass="allReviewsButton" stylesheets="@../../css/CommonFeatures.css" text="%homepage.allreviews.close" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />

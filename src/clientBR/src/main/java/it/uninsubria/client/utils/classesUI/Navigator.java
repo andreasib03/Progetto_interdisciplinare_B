@@ -55,7 +55,7 @@ public class Navigator {
         // Navigazione con controllo su stack (true = salva nel backStack)
     private static void goTo(String fxmlPath, Map<String, Object> params, boolean pushToStack) {
         try {
-            FXMLLoader loader = new FXMLLoader(Navigator.class.getResource(fxmlPath));
+            FXMLLoader loader = new FXMLLoader(Navigator.class.getResource(fxmlPath), LanguageManager.getBundle());
             Parent root = loader.load();
 
             // Passaggio parametri se richiesto
@@ -121,17 +121,20 @@ public class Navigator {
                 ThemeManager.applyTheme(scene);
                 mainStage.setScene(scene);
                 mainStage.show();
+
+                updateUserInfo();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
             System.err.println("Main stage non impostato.");
         }
-        
+
     }
 
     public static void updateUserInfo() {
         if (mainController != null) {
+            System.out.println("Aggiornamento UI informazioni utente in corso...");
             mainController.updateUserInfoUI();
         } else {
             System.err.println("Impossibile aggiornare l'UI: controller principale non trovato.");
@@ -176,12 +179,27 @@ public class Navigator {
     }
 
     public static void openNewWindow(String fxmlPath, String title) {
+        openNewWindow(fxmlPath, title, null);
+    }
+
+    public static void openNewWindow(String fxmlPath, String title, Map<String, Object> params) {
         try {
-            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(Navigator.class.getResource(fxmlPath)));
+            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(Navigator.class.getResource(fxmlPath)), LanguageManager.getBundle());
             Parent root = loader.load();
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             ThemeManager.applyTheme(scene);
+
+            if (params != null) {
+                parameters.clear();
+                parameters.putAll(params);
+
+                Object controller = loader.getController();
+                if (controller instanceof ParametrizedController pc) {
+                    pc.initData(params);
+                }
+            }
+
             stage.setScene(scene);
             stage.setTitle(title);
             stage.show();

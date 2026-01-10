@@ -11,6 +11,7 @@ import it.uninsubria.client.utils.classesUI.SessionManager;
 import it.uninsubria.client.utils.classesUI.ResourceCache;
 import it.uninsubria.client.utils.classesUI.ThreadPoolManager;
 import it.uninsubria.shared.model.User;
+import it.uninsubria.shared.utils.LoggerUtil;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Cursor;
@@ -112,6 +113,23 @@ public class contentModifyProfile extends ControllerBase {
 
                 if (profileInfoSuccess && imageSuccess) {
                     SessionManager.getInstance().setUser(currentUser);
+
+                    if (finalImageBytes != null && imageSuccess) {
+                        try {
+                            User updatedUser = ServiceLocator.getUserService().getUserByUsernameOrEmail(currentUser.getID());
+                            if (updatedUser != null) {
+                                currentUser.setProfileImage(updatedUser.getProfileImage());
+                                currentUser.setProfileImageType(updatedUser.getProfileImageType());
+                                SessionManager.getInstance().setUser(currentUser);
+                                if (updatedUser.getProfileImage() != null) {
+                                    SessionManager.getInstance().setProfileImageFile(updatedUser.getProfileImage(), updatedUser.getProfileImageType());
+                                }
+                            }
+                        } catch (Exception ex) {
+                            LoggerUtil.getLogger(contentModifyProfile.class).warning("Failed to reload profile image from server: " + ex.getMessage());
+                        }
+                    }
+
                     javafx.application.Platform.runLater(() -> {
                         hideLoadingState();
                         showAlert("Successo", "Profilo aggiornato correttamente!", Alert.AlertType.INFORMATION);

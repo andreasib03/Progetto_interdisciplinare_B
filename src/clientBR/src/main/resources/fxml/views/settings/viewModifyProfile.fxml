@@ -55,7 +55,7 @@
                         <Font name="Lucida Sans Unicode" size="13.0" />
                      </font>
                   </Label>
-                  <Region prefHeight="58.0" prefWidth="405.0" />
+                  <Region prefHeight="58.0" prefWidth="394.0" />
                    <TextField fx:id="emailTextField" prefHeight="35.0" prefWidth="300.0" styleClass="field" stylesheets="@../../../css/CommonFeatures.css" />
                </children>
             </HBox>

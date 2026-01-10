@@ -409,10 +409,14 @@ public class LibraryListController extends ControllerBase {
             edit.getStyleClass().add(BUTTON_WARNING_STYLE_CLASS);
             edit.setOnAction(e -> openCreateLibraryWindow(lib));
 
-            CheckBox selectCheckBox = new CheckBox(resolveString("%library.checkbox.select"));
+            Label labelSelect = new Label(resolveString("%library.checkbox.select"));
+            labelSelect.getStyleClass().add(TEXT_MUTED_STYLE_CLASS);
+
+            CheckBox selectCheckBox = new CheckBox();
             selectCheckBox.setOnAction(e -> lib.setSelected(selectCheckBox.isSelected()));
 
-            actions.getChildren().addAll(open, edit, selectCheckBox);
+
+            actions.getChildren().addAll(open, edit, selectCheckBox, labelSelect);
 
             // Aggiungere hover effect con classi CSS
             card.setOnMouseEntered(e -> {
@@ -696,7 +700,7 @@ public class LibraryListController extends ControllerBase {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(EveryView.BOOK_DETAIL_SIMPLE.getPath()), LanguageManager.getBundle());
             Parent detailRoot = loader.load();
 
-            it.uninsubria.client.controller.homepage.BookDetailController controller =
+            it.uninsubria.client.controller.homepage.BookDetailSimpleController controller =
                 loader.getController();
             controller.setBook(book);
 

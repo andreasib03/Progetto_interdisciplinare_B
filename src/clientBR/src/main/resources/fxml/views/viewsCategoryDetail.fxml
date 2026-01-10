@@ -13,13 +13,12 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="categoryDetailRoot" stylesheets="@../../css/CommonFeatures.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uninsubria.client.controller.homepage.categories.CategoryDetailController">
    <children>
       <!-- Header Section -->
-      <VBox spacing="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <VBox spacing="10.0" styleClass="vboxtransparent" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
             <!-- Navigation and Title -->
             <HBox alignment="CENTER_LEFT" spacing="15.0">
                <children>
-                     <Button fx:id="backButton" mnemonicParsing="false" styleClass="categoryBackButton" text="" />
-                  <VBox spacing="5.0">
+                  <VBox spacing="5.0" styleClass="vboxtransparent">
                      <children>
                            <Label fx:id="categoryTitleLabel" styleClass="categoryTitleLabel" text="" />
                            <Label fx:id="statsLabel" styleClass="categoryStatsLabel" text="" />
@@ -57,7 +56,7 @@
        </VBox>
 
        <!-- Empty state -->
-       <VBox fx:id="emptyStateContainer" alignment="CENTER" spacing="20.0" visible="false" styleClass="categoryEmptyState" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+       <VBox fx:id="emptyStateContainer" alignment="CENTER" spacing="20.0" styleClass="categoryEmptyState" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
           <children>
              <FontIcon iconLiteral="fas-book-open" iconSize="64" styleClass="categoryEmptyIcon" />
                <Label styleClass="categoryEmptyTitle" text="No books found" />

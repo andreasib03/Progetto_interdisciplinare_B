@@ -4,69 +4,80 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1151.0" styleClass="backgroundAnchorPaneColored" stylesheets="@../../../css/CommonFeatures.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uninsubria.client.controller.homepage.help.FAQController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1151.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uninsubria.client.controller.homepage.help.FAQController">
    <children>
-      <VBox alignment="TOP_CENTER" layoutX="277.0" layoutY="20.0" prefHeight="737.0" prefWidth="792.0" spacing="20" styleClass="vboxTrasparentPadding" stylesheets="@../../../css/CommonFeatures.css">
+      <HBox prefHeight="750.0" prefWidth="1151.0"> 
          <children>
-            <Accordion fx:id="accordion1" stylesheets="@../../../css/CommonFeatures.css">
-               <panes>
-                  <TitledPane fx:id="titledpane1" text="🔐 Come posso cambiare la mia password?">
-                     <content>
-                        <AnchorPane prefHeight="100.0" prefWidth="600.0">
-                           <children>
-                              <Label layoutX="10" layoutY="10" styleClass="labelDescriptionAbout" stylesheets="@../../../css/CommonFeatures.css" text="Puoi cambiare la password dalla sezione impostazioni, cliccando su 'Cambia Password'." wrapText="true" />
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </TitledPane>
-               </panes>
-            </Accordion>
-            <Accordion fx:id="accordion2" stylesheets="@../../../css/CommonFeatures.css">
-               <panes>
-                  <TitledPane fx:id="titledpane2" text="📘 Come faccio a scaricare i manuali?">
-                     <content>
-                        <AnchorPane prefHeight="100.0" prefWidth="600.0">
-                           <children>
-                              <Label layoutX="10" layoutY="10" styleClass="labelDescriptionAbout" stylesheets="@../../../css/CommonFeatures.css" text="I manuali sono disponibili nella sezione documentazione. Puoi scaricarli cliccando sul pulsante 'Download'." wrapText="true" />
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </TitledPane>
-               </panes>
-            </Accordion>
-            <Accordion fx:id="accordion3" stylesheets="@../../../css/CommonFeatures.css">
-               <panes>
-                  <TitledPane fx:id="titledpane3" text="📨 Come contattare l'assistenza?">
-                     <content>
-                        <AnchorPane prefHeight="100.0" prefWidth="600.0">
-                           <children>
-                              <Label layoutX="10" layoutY="10" styleClass="labelDescriptionAbout" stylesheets="@../../../css/CommonFeatures.css" text="Puoi contattare il nostro supporto via email a support@example.com o tramite il form di contatto." wrapText="true" />
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </TitledPane>
-               </panes>
-            </Accordion>
-            <Accordion fx:id="accordion4" stylesheets="@../../../css/CommonFeatures.css">
-               <panes>
-                  <TitledPane fx:id="titledpane4" text="🎨 Posso cambiare il tema dell'app?">
-                     <content>
-                        <AnchorPane prefHeight="100.0" prefWidth="600.0">
-                           <children>
-                              <Label layoutX="10" layoutY="10" styleClass="labelDescriptionAbout" stylesheets="@../../../css/CommonFeatures.css" text="Sì, puoi scegliere tra tema chiaro e scuro nella sezione impostazioni -&gt; Aspetto." wrapText="true" />
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </TitledPane>
-               </panes>
-            </Accordion>
+            <VBox alignment="TOP_CENTER" prefHeight="750.0" prefWidth="282.0" styleClass="vboxTrasparentPadding" stylesheets="@../../../css/CommonFeatures.css">
+               <children>
+                  <Region prefHeight="51.0" prefWidth="293.0" />
+                  <Label styleClass="aboutTitle" stylesheets="@../../../css/CommonFeatures.css" text="%faq.title" />
+                  <Label styleClass="aboutTitle" stylesheets="@../../../css/CommonFeatures.css" text="%faq.subtitle.frequent" />
+                  <Label styleClass="aboutDesc" stylesheets="@../../../css/CommonFeatures.css" text="%faq.subtitle.questions" wrapText="true" />
+                  <Label styleClass="aboutDesc" stylesheets="@../../../css/CommonFeatures.css" text="%faq.subtitle.common" wrapText="true" />
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" prefHeight="758.0" prefWidth="875.0" spacing="20" styleClass="vboxTrasparentPadding" stylesheets="@../../../css/CommonFeatures.css">
+               <children>
+                  <Accordion fx:id="accordion1">
+                     <panes>
+                        <TitledPane fx:id="titledpane1" styleClass="titledPane" stylesheets="@../../../css/CommonFeatures.css" text="%faq.question.password.title">
+                           <content>
+                              <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                                 <children>
+                                    <Label layoutX="10" layoutY="10" styleClass="labelDescriptionAbout" stylesheets="@../../../css/CommonFeatures.css" text="%faq.question.password.answer" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <Accordion fx:id="accordion2">
+                     <panes>
+                        <TitledPane fx:id="titledpane2" styleClass="titledPane" stylesheets="@../../../css/CommonFeatures.css" text="%faq.question.manual.title">
+                           <content>
+                              <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                                 <children>
+                                    <Label layoutX="10" layoutY="10" styleClass="labelDescriptionAbout" stylesheets="@../../../css/CommonFeatures.css" text="%faq.question.manual.answer" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <Accordion fx:id="accordion3">
+                     <panes>
+                        <TitledPane fx:id="titledpane3" styleClass="titledPane" stylesheets="@../../../css/CommonFeatures.css" text="%faq.question.support.title">
+                           <content>
+                              <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                                 <children>
+                                    <Label layoutX="10" layoutY="10" styleClass="labelDescriptionAbout" stylesheets="@../../../css/CommonFeatures.css" text="%faq.question.support.answer" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+                  <Accordion fx:id="accordion4">
+                     <panes>
+                        <TitledPane fx:id="titledpane4" styleClass="titledPane" stylesheets="@../../../css/CommonFeatures.css" text="%faq.question.theme.title">
+                           <content>
+                              <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                                 <children>
+                                    <Label layoutX="10" layoutY="10" styleClass="labelDescriptionAbout" stylesheets="@../../../css/CommonFeatures.css" text="%faq.question.theme.answer" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+               </children>
+            </VBox>
          </children>
-      </VBox>
-      <Label layoutX="115.0" layoutY="61.0" styleClass="aboutTitle" stylesheets="@../../../css/CommonFeatures.css" text="FAQ" />
-      <Label layoutX="35.0" layoutY="141.0" styleClass="aboutDesc" stylesheets="@../../../css/CommonFeatures.css" text="Qui troverai le risposte alle" wrapText="true" />
-      <Label layoutX="46.0" layoutY="162.0" styleClass="aboutDesc" stylesheets="@../../../css/CommonFeatures.css" text="domande più comuni" wrapText="true" />
-      <Label layoutX="14.0" layoutY="101.0" styleClass="aboutTitle" stylesheets="@../../../css/CommonFeatures.css" text="Domande frequenti" />
+      </HBox>
    </children>
 </AnchorPane>
