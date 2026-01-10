@@ -1,0 +1,1439 @@
+/* Common CSS Features - No CSS Variables for JavaFX 17 Compatibility */
+
+.logoImage{
+    -fx-translate-x:0;
+}
+.root{
+    -fx-translate-x:0;
+}
+
+.regionContent{
+    -fx-translate-x:0;
+}
+
+.cardVideoStyle{
+    padding: 10;
+    border-radius: 10;
+    -fx-padding: 10;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 1);
+}
+
+.loginInfoButtonNotAccess{
+    background-color: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: #cc0000;
+}
+
+.categoriesTitle{
+    font-size: 18px;
+    font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-allignment: center;
+}
+
+.categoriesLoading{
+    -fx-font-size: 14px;
+    font-size: 14px;
+}
+
+.cardVideoStyle:hover{
+    background-color: #f0f0f0;
+    padding: 10;
+    border-radius: 10;
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 10;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+.vboxForgotPassword{
+    padding: 20px;
+    -fx-padding: 20px;
+    -fx-alignment: center;
+}
+
+.buttonForgotPassword{
+    font-size: 14px;
+    padding: 10px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-pref-width: 100px;
+    -fx-padding: 10px;
+}
+
+.dialogForgotPassword .dialog-pane{
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    border-width: 1px;
+    border-radius: 8px;
+    padding: 20px;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+}
+
+.textFieldForgotPassword{
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    border-color: #ced4da;
+    border-width: 1px;
+    -fx-pref-width: 300px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #ced4da;
+    -fx-border-width: 1px;
+}
+
+/* Category Detail Controller Styles */
+.categoryDetailRoot {
+    -fx-background-color: #f8f9fa;
+    background-color: #f8f9fa;
+}
+
+.categoryBackButton {
+    background-color: transparent;
+    border-color: #009dc7;
+    border-radius: 5;
+    font-size: 14px;
+    padding: 8 16 8 16;
+    -fx-background-color: transparent;
+    -fx-border-color: #009dc7;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-text-fill: #009dc7;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16 8 16;
+}
+
+.categoryBackButton:hover {
+    -fx-background-color: rgba(0, 157, 199, 0.1);
+    background-color: rgba(0, 157, 199, 0.1);
+}
+
+.categoryTitleLabel {
+    font-size: 24px;
+    font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.categoryStatsLabel {
+    font-size: 14px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.categorySearchField {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    border-width: 1px;
+    -fx-pref-width: 300px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+}
+
+.categorySearchField:focused {
+    border-width: 2px;
+    -fx-border-width: 2px;
+}
+
+.categorySortLabel {
+    font-weight: normal;
+    font-size: 14px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #495057;
+    -fx-font-weight: normal;
+}
+
+.categorySortComboBox {
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 4px;
+    -fx-pref-width: 200px;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 4px;
+}
+
+.categorySortComboBox:focused {
+    border-width: 2px;
+    -fx-border-width: 2px;
+}
+
+.categoryResetButton {
+    font-size: 12px;
+    padding: 6 12 6 12;
+    border-radius: 3;
+    -fx-font-size: 12px;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+}
+
+.categoryResetButton:pressed {
+    background-color: #545b62;
+    -fx-background-color: #545b62;
+}
+
+.categoryReloadButton {
+    font-size: 12px;
+    padding: 6 12 6 12;
+    border-radius: 3;
+    -fx-font-size: 12px;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+}
+
+
+.categoryReloadButton:pressed {
+    background-color: #1e7e34;
+    -fx-background-color: #1e7e34;
+}
+
+.categoryBooksContainer {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.categoryBooksListView {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.categoryBooksListView .scroll-bar:vertical {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.categoryBooksListView .scroll-bar:vertical .track {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.categoryBooksListView .scroll-bar:vertical .thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    -fx-background-color: rgba(0, 0, 0, 0.2);
+    -fx-background-radius: 3px;
+}
+
+.categoryBooksListView .scroll-bar:vertical .thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    -fx-background-color: rgba(0, 0, 0, 0.4);
+}
+
+.categoryEmptyState {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.categoryEmptyIcon {
+    fill: #bdc3c7;
+    -fx-fill: #bdc3c7;
+}
+
+.categoryEmptyTitle {
+    font-size: 18px;
+    font-weight: normal;
+    -fx-font-size: 18px;
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: normal;
+}
+
+.categoryEmptyMessage {
+    font-size: 14px;
+    font-weight: normal;
+    -fx-font-size: 14px;
+    -fx-text-fill: #95a5a6;
+    -fx-font-weight: normal;
+}
+
+/* Category Book Cards */
+.categoryBookCard {
+    border-radius: 5;
+    padding: 15;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+.categoryBookCard:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 3, 0, 0, 2);
+}
+
+.categoryBookTitle {
+    font-size: 16px;
+    font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.categoryBookAuthor {
+    font-size: 14px;
+    font-weight: normal;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+}
+
+.categoryBookYear {
+    font-size: 12px;
+    font-weight: normal;
+    -fx-font-size: 12px;
+    -fx-font-weight: normal;
+}
+
+.categoryBookDescription {
+    font-size: 13px;
+    -fx-font-size: 13px;
+    -fx-wrap-text: true;
+}
+
+.categoryBookButton {
+    font-size: 12px;
+    padding: 6 12 6 12;
+    border-radius: 3;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+}
+
+
+.categoryBookButton:pressed {
+    background-color: #545b62;
+    -fx-background-color: #545b62;
+}
+
+/* Categories Controller Styles */
+.categoriesCard {
+    border-color: #e0e0e0;
+    border-radius: 8;
+    background-color: white;
+    padding: 15;
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 2, 0, 0, 1);
+}
+
+.categoriesCard:hover {
+    background-color: #f8f9fa;
+    border-color: #009dc7;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #009dc7;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 3, 0, 0, 2);
+}
+
+.categoriesButtonPrimary {
+    font-size: 11px;
+    padding: 6 12 6 12;
+    background-color: #009dc7;
+    border-radius: 3;
+    -fx-background-color: #009dc7;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+}
+
+.categoriesButtonPrimary:hover {
+    background-color: #007ba7;
+    -fx-background-color: #007ba7;
+}
+
+.categoriesButtonPrimary:pressed {
+    background-color: #005a87;
+    -fx-background-color: #005a87;
+}
+
+.categoriesButtonSecondary {
+    font-size: 11px;
+    padding: 6 12 6 12;
+    background-color: #666;
+    border-radius: 3;
+    -fx-background-color: #666;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+}
+
+.categoriesButtonSecondary:hover {
+    background-color: #555;
+    -fx-background-color: #555;
+}
+
+.categoriesButtonSecondary:pressed {
+    background-color: #444;
+    -fx-background-color: #444;
+}
+
+.categoriesButtonReset {
+    font-size: 11px;
+    padding: 6 12 6 12;
+    background-color: #95a5a6;
+    border-radius: 3;
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 3;
+    -fx-border-radius: 3;
+}
+
+.categoriesButtonReset:hover {
+    background-color: #7f8f90;
+    -fx-background-color: #7f8f90;
+}
+
+.categoriesButtonReset:pressed {
+    background-color: #6a797a;
+    -fx-background-color: #6a797a;
+}
+
+.categoriesTextSecondary {
+    -fx-text-fill: #666;
+}
+
+.categoriesTextMuted {
+    -fx-text-fill: #888;
+}
+
+.categoriesLoadingLabel {
+    font-size: 16px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #666;
+}
+
+.categoriesErrorLabel {
+    font-size: 14px;
+    padding: 20;
+    -fx-font-size: 14px;
+    -fx-text-fill: #e74c3c;
+    -fx-padding: 20;
+}
+
+.categoriesRecommendationsBox {
+    border-color: #e0e0e0;
+    border-radius: 5;
+    background-color: #f8f9fa;
+    padding: 15;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 15;
+}
+
+.categoriesStatusItalic {
+    font-style: italic;
+    -fx-font-style: italic;
+    -fx-text-fill: #666;
+}
+
+.categoriesListItem {
+    cursor: hand;
+    padding: 5;
+    -fx-cursor: hand;
+    -fx-padding: 5;
+}
+
+.categoriesRecommendationsLabel {
+    font-size: 16px;
+    font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.categoriesRecommendationsTitle {
+    font-size: 12px;
+    font-weight: bold;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.categoriesRecommendationsDesc {
+    font-size: 11px;
+    -fx-font-size: 11px;
+}
+
+.backButtonLogin{
+    font-size: 18px;
+    -fx-font-size: 18px;
+}
+
+.buttonModifyProfile{
+    background-color: transparent;
+    border-radius: 10;
+
+    -fx-background-color: transparent;
+    -fx-border-radius: 10;
+}
+
+.buttonCancelModifyProfile{
+    background-color: transparent;
+    border-radius: 10;
+    -fx-text-fill: red;
+
+    -fx-background-color: transparent;
+    -fx-border-radius: 10;
+}
+
+.libraryTitle{
+    font-size: 24px;
+    font-weight: bold;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.textfieldForgotPassword{
+    border-radius: 10px;
+    border-width: 2px;
+    padding: 5px;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-padding: 5px;
+}
+
+.labelForgotPassword{
+    font-size: 16px;
+    font-family: 'Lucida Sans Unicode';
+    -fx-font-size: 16px;
+    -fx-font-family: 'Lucida Sans Unicode';
+}
+
+.titleLabelVideo{
+    font-size: 14;
+    font-weight: bold;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+}
+
+.descriptionLabelVideo{
+    font-size: 12;
+    -fx-font-size: 12;
+}
+
+
+.vboxRoot{
+    border-radius: 20;
+    padding: 20;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 20, 0.2, 0, 2)
+}
+
+.stackpane-background {
+    -fx-translate-x:0;
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+/*Abouts.css*/
+
+.list-view {
+    padding: 5;
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode";
+    border-radius: 10;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+    -fx-font-family: "Lucida Sans Unicode";
+}
+
+.list-cell {
+    padding: 10;
+    -fx-padding: 10;
+}
+
+.labelAbout{
+    font-size: 12px;
+    font-family: "Lucida Console";
+    -fx-font-family: "Lucida Console";
+    -fx-font-size: 12px;
+    -fx-text-fill: black;
+}
+
+.labelAboutDesc{
+    font-size: 9px;
+    font-family: "Lucida Console";
+    -fx-font-family: "Lucida Console";
+    -fx-font-size: 9px;
+    -fx-text-fill: black;
+}
+
+.borderBarAbout{
+    -fx-background-radius: 10;
+}
+
+.helpTitle{
+    font-family:"Lucida Sans Unicode";
+    font-size:30px;
+    -fx-font-family:"Lucida Sans Unicode";
+    -fx-font-size:30px;
+}
+
+.helpTitleDesc{
+    font-family:"Lucida Sans Unicode";
+    font-size:30px;
+    -fx-font-family:"Lucida Sans Unicode";
+    -fx-font-size:12px;
+}
+
+.helpSearchBar{
+    -fx-translate-x:0;
+}
+
+/*Alert.css*/
+
+.dialog-pane {
+    border-radius: 10;
+    font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif";
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-family: "Segoe UI", "Tahoma", "Geneva", "Verdana", "sans-serif";
+}
+
+.dialog-pane .content.label {
+    font-size: 14px;
+    -fx-font-size: 14px;
+}
+
+.buttonAlert {
+    padding: 8 15 8 15;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15 8 15;
+}
+
+/*Contacts.css*/
+
+.text-fieldContact, .text-areaContact {
+    border-radius: 8;
+    border-width: 1;
+    padding: 8;
+    font-size: 14px;
+    font-family: "Lucida Sans Unicode";
+
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+    -fx-font-family: "Lucida Sans Unicode";
+}
+
+
+.buttonContact {
+    font-weight: bold;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.labelContact {
+    font-size: 13px;
+    font-family: "Lucida Sans Unicode";
+    -fx-font-size: 14px;
+    -fx-font-family: "Lucida Sans Unicode";
+}
+
+/*FAQ.css*/
+
+.accordion {
+    padding: 15;
+    -fx-padding: 15;
+    -fx-effect:  dropshadow(gaussian, rgba(61,141,245,0.15), 10, 0.3, 0, 3);
+}
+
+.titled-pane {
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 15;      
+    border-width: 1.5;
+    padding: 5;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;          /* arrotondamento */
+    -fx-border-radius: 15;              /* arrotondamento bordo */
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+/* Stile della "barra titolo" */
+.titled-pane > .title {
+    font-weight: bold;
+    padding: 8;
+    -fx-font-weight: bold;
+    -fx-padding: 8;
+    -fx-background-radius: 10;   /* solo sopra arrotondato */
+}
+
+.titled-pane > .content {
+    font-size: 14px;
+    padding: 10;
+    border-radius: 0 0 10 10; 
+    border-width: 0.8;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+    -fx-border-radius: 0 0 10 10; 
+    -fx-border-width: 0.8;
+}
+
+.titled-pane > .ancorpane {
+    padding: 10; 
+    -fx-padding: 10;              /* padding */
+    -fx-background-radius: 20;   /* arrotondamento */
+}
+
+.vboxtransparent{
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+/* La freccetta */
+.titled-pane > .title > .arrow-button > .arrow {
+    -fx-translate-x: 720;      /* sposta leggermente a sinistra */
+}
+
+/*Impostazioni.css*/
+
+
+/* Contenitore del bottone */
+.switch-buttonSettings {
+    padding: 0;
+    -fx-padding: 0;
+    -fx-background-radius: 30;
+    -fx-pref-width: 50px;
+    -fx-pref-height: 25px;
+}
+
+
+/* Cerchio interno */
+.switch-buttonSettings .thumb {
+    max-width: 20px;
+    max-height: 20px;
+    transition: all 0.3s ease;
+    -fx-translate-x: -15px;
+    -fx-background-radius: 50%;
+    -fx-max-width: 20px;
+    -fx-max-height: 20px;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.2), 2, 0.0, 0, 1);
+    -fx-transition: all 0.3s ease;
+}
+
+
+
+.switch-buttonSettings:selected .thumb {
+    -fx-translate-x: 15px; /* Sposta il cerchio a destra */
+}
+
+.borderBarSettings{
+    -fx-border-radius: 10;
+    border-radius: 10;
+
+}
+
+
+.title-labelSettings{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10 0 20 0;
+
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0 20 0;
+
+}
+
+.textfield-settings{
+
+    border-width: 1;
+    border-radius: 8;
+    font-size: 14px;
+    padding: 8 12;
+
+
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-font-size: 12px;
+    -fx-padding: 8 12;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.05), 1, 0.2, 0, 1);
+}
+
+.navBarSettings {
+    font-weight: normal;
+    -fx-font-weight: normal;
+}
+
+.scrollPaneSettings{
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.labelLibrary{
+    -fx-font-size: 12px;
+    font-size: 12px;
+}
+
+.recapHBOX{
+    -fx-padding: 8;
+    padding: 8;
+    -fx-background-radius: 8;
+    border-radius: 8;
+    -fx-border-radius: 8;
+    border-radius: 8;
+}
+
+.scrollPaneLibrary{
+    -fx-border-width: 1;
+    border-width: 1;
+}
+
+.vboxLibrary{
+    border-width: 5;
+    border-radius:15;
+    -fx-border-width: 5;
+    -fx-border-radius:15;
+}
+
+.button-filledSettings{
+    font-weight: bold;
+    -fx-font-weight: Bold;
+}
+
+.menuItemSearching{
+    -fx-translate-x:0;
+}
+
+.categoriesMenu{
+    -fx-translate-x:0;
+}
+.noSelectedButton{
+    border-radius: 30;
+    border-width: 0.8;
+    -fx-border-radius: 30;
+    -fx-border-width: 0.8;
+}
+
+.selectedButton{
+    border-radius: 30; 
+    -fx-background-radius: 30; 
+    -fx-border-radius: 30; 
+}
+
+/*Login.css*/
+
+.loginbuttonLogin{
+    -fx-background-radius: 20;
+}
+
+.labelColorLogin{
+    -fx-translate-x:0;
+}
+
+.stackPaneColorLogin{
+    -fx-translate-x:0;
+}
+
+.buttonBack{
+    border-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.labelTitleDesc{
+    -fx-translate-x:0;
+}
+
+
+.field{
+    -fx-background-radius: 20;
+}
+
+.labelHelp{
+    border-color: gray;
+    background-color:  lightyellow;
+    -fx-border-color: gray;
+    -fx-background-color:  lightyellow;
+    padding: 5;
+    -fx-padding: 5;
+}
+
+
+.vboxLogin{
+    border-radius: 20;
+    padding:20;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding:20;
+    -fx-effect:  dropshadow(gaussian, rgba(0,0,0,0.1), 20, 0.2, 0, 2)
+}
+
+.regionLogin{
+    border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+}
+
+.checkboxLoggedIn{
+    -fx-translate-x:0;
+}
+
+
+/*Registration.css*/
+.button-registration{
+    -fx-background-radius: 20;
+}
+
+.notValid{
+    font-weight:bold;
+    -fx-font-weight:bold;
+}
+
+.labelRegister{
+    font-family: "Franklin Gothic Medium";
+    font-size:14px;
+    -fx-font-family: "Franklin Gothic Medium";
+    -fx-font-size:14px;
+}
+
+.labelRegisterDesc{
+    font-family: "Franklin Gothic Medium";
+    font-size:12px;
+    -fx-font-family: "Franklin Gothic Medium";
+    -fx-font-size:12px;
+}
+
+.title-registration{
+    font-size: 36px;
+    font-family: "Impact";
+    -fx-font-family: "Impact";
+    -fx-font-size: 36px;
+}
+
+.button-nopeRegistration{
+    -fx-background-radius: 12;
+}
+
+.textareasRegistration{
+    border-radius:10;
+    -fx-background-radius: 10;
+    -fx-border-radius:10;
+}
+
+/*Splashscreen.css*/
+.pretty-labelSplashScreen {
+
+    font-size: 18px;
+    font-weight: 600;
+    padding: 8 12;
+    border-radius: 8;
+    font-family: "Lucida Sans Unicode";
+
+    -fx-font-family: "Lucida Sans Unicode";
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-padding: 8 12;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 2, 0.4, 0, 1);
+}
+
+.pretty-progressSplashScreen{
+
+    border-radius: 10;
+    padding: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 3;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 2, 0.3, 0, 1);
+
+
+}
+
+.layout-screenSplashScreen{
+    
+    padding: 40;
+    border-radius: 15;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0.2, 0, 3);
+    border-color: transparent;
+    background-color: transparent;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+
+}
+
+.exitRegion{
+    -fx-translate-x:0;
+}
+
+/*Styles.css*/
+
+.fontawesomeWhite, .fontawesomeDefault { 
+    -fx-translate-x:0;
+}
+
+.button-filledHome{
+    font-weight: 600;
+    -fx-background-radius: 15;
+    -fx-font-weight: 600;
+}
+
+.labelBoldHome {
+    font-weight: bold;
+    -fx-font-weight: Bold;
+}
+
+.labelDefaultHome {
+    font-weight: normal;
+    -fx-font-weight: Normal
+}
+
+.loginRegisterButtonHome {
+    font-weight: bold;
+    padding: 10 20;
+    -fx-background-radius: 10; /* Raggio di curvatura per gli angoli */
+    -fx-font-weight: bold; /* Testo in grassetto */
+    -fx-padding: 10 20; /* Padding interno per il pulsante */
+}
+
+.menuButton{
+    font-weight: bold;
+    padding: 10 20;
+    -fx-background-radius: 10; /* Raggio di curvatura per gli angoli */
+    -fx-font-weight: bold; /* Testo in grassetto */
+    -fx-padding: 10 20; /* Padding interno per il pulsante */
+    -fx-translate-x:200px;
+}
+
+.menuButton .label {
+    -fx-translate-x:0;
+}
+
+.aboutTitle{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.aboutDesc{
+    -fx-font-size: 18px;
+    font-size: 18px;
+}
+
+.labelDescriptionAbout{
+    -fx-text-fill: black;
+}
+
+.vboxVignetteHome{
+    -fx-border-radius: 10;
+    -fx-border-width: 2;
+    -fx-border-color:  #f1f1f1;
+    -fx-background-color: transparent;
+    background-color: transparent;
+
+    border-radius: 10;
+    border-width: 2;
+    border-color:  #f1f1f1;
+
+}
+
+.noteLabel{
+    -fx-font-size: 12px;
+    font-size: 12px;
+}
+
+.userLabel{
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.navBarHome {
+    border-radius: 15;
+    -fx-translate-x: 50;
+    -fx-border-radius: 15;
+
+}
+
+.searchBar {
+    -fx-background-radius: 15; /* Raggio di curvatura per gli angoli */
+}
+
+.searchBarButtonHome {
+    -fx-background-radius: 12;
+}
+
+
+.accessButtonHome {
+    font-size: 13px;
+    border-radius: 10;
+    border-width: 1;
+    -fx-font-size: 13px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+}
+
+.windowsSettingsBar{
+    border-radius: 10;
+    border-width: 0.4;
+    -fx-border-radius: 10;
+    -fx-border-width: 0.4;
+}
+
+.vboxWindowsSettings{
+    border-radius:15;
+    border-width: 5;
+    -fx-border-width: 5;
+    -fx-border-radius:15;
+}
+
+.labelSettingsTheme{
+    font-size: 15px;
+    -fx-font-size: 15px;
+}
+
+.labelDescSettingsTheme{
+    font-size: 15px;
+    -fx-font-size: 12px;
+}
+
+
+
+.notAccess{
+    font-size: 25px;
+    background-color: transparent;
+    -fx-background-color: transparent;
+    -fx-translate-x: 0;
+    -fx-text-fill: #cc0000;
+    -fx-font-size: 25px;
+}
+
+@font-face {
+    font-family: 'FontTitles';
+    src: url('/fonts/Merriweather-Regular.ttf');
+}
+
+
+
+.labelTitleHome {
+    -fx-inset-shadow: none;
+}
+
+.hboxContainerHome{
+    -fx-background-radius: 20;
+}
+
+
+
+.buttonSettingsClickedHome{
+    -fx-background-radius: 15;
+}
+
+.circle-borderHome {
+    -fx-border-width: 1px;
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    border-width: 1px;
+    border-radius: 50%;
+}
+
+.vboxDashboard{
+    -fx-background-radius: 10;
+}
+
+/*Valutazione.css*/
+.text-areaValutation {
+    border-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.spinner {
+    -fx-pref-width: 80px;
+}
+
+/*Video.css*/
+.video-button {
+    font-weight: bold;
+    padding: 8 16;
+    font-size: 14px;
+    cursor: hand;
+
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 8 16;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+/*Libraries*/
+
+.title-label {
+    font-weight: bold;
+    font-size: 22px;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.library-card {
+    background-color: #ffffff;
+    border-radius: 15;
+    border-color: #ddd;
+    padding: 10;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #ddd;
+    -fx-padding: 10;
+}
+
+.library-card:hover {
+    background-color: #f3f1ff;
+    border-color: #6C63FF;
+    -fx-background-color: #f3f1ff;
+    -fx-border-color: #6C63FF;
+}
+
+.icon-circle {
+    background-color: #6C63FF;
+    min-width: 40;
+    min-height: 40;
+    -fx-background-color: #6C63FF;
+    -fx-background-radius: 50%;
+    -fx-min-width: 40;
+    -fx-min-height: 40;
+    -fx-alignment: center;
+}
+
+.icon-text {
+    font-weight: bold;
+    font-size: 16px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.library-name {
+    font-size: 16px;
+    font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.open-button {
+    background-color: #6C63FF;
+    font-weight: bold;
+    cursor: hand;
+    -fx-background-color: #6C63FF;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.allReviewsButton{
+    background-color: transparent;
+    border-radius: 10;
+    border-width: 2;
+    -fx-border-width: 2;
+    -fx-background-color: transparent;
+    -fx-border-radius: 10;
+}
+
+.vboxAllReviews {
+    -fx-inset-shadow: none;
+}
+
+
+.scrollPaneAllReviews{
+    -fx-inset-shadow: none;
+}
+
+.hboxAllReviews{
+    border-width:  0 0 1 0;
+   -fx-border-width:  0 0 1 0;
+}
+
+.hbox2AllReviews{
+    -fx-inset-shadow: none;
+}
+
+.anchorPaneAllReviews{
+    background-color:  white;
+    -fx-background-color:  white;
+}
+
+.bookdetailsimpleAnchorPane{
+    -fx-inset-shadow: none;
+}
+
+.bookdetailsimpleVBOX{
+    padding: 20;
+    -fx-padding: 20;
+}
+
+.bookdetailsimpleHBOX{
+    background-color:  #f8f9fa;
+    border-color:  #dee2e6;
+    border-width:  0 0 1 0;
+    -fx-background-color:  #f8f9fa;
+    -fx-border-color:  #dee2e6;
+    -fx-border-width:  0 0 1 0;
+}
+
+.bookdetailsLabel{
+    font-weight: bold;
+    font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.bookdetailsLabeldesc{
+    font-weight: bold;
+    font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.bookdetailsLabelsuperdesc{
+    font-size: 12px;
+    -fx-font-size: 12px;
+}
+
+.bookdetailsLabelitalic{
+    font-style: italic;
+    -fx-font-style: italic;
+}
+
+.bookdetailsimpleVBOX2{
+    padding: 15;
+    border-radius: 10;
+    -fx-padding: 15;
+    -fx-border-radius: 10;
+}
+
+/* Library Controller Styles - Theme-aware classes */
+.libraryEmptyText {
+    -fx-text-fill: #666;
+}
+
+.libraryListView {
+    -fx-background-color: transparent;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8;
+}
+
+.libraryBookLabel {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.libraryReviewButton {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.librarySuggestButton {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.libraryRemoveButton {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+    -fx-cursor: hand;
+}
+
+.librarySuggestionsButton {
+    -fx-background-color: #9b59b6;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 8 16;
+}
+
+.libraryButtonPrimary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.libraryButtonWarning {
+    -fx-background-color: #f39c12;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.libraryTextPrimary {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.libraryTextSecondary {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.libraryTextMuted {
+    -fx-font-size: 10px;
+    -fx-text-fill: #7f8c8d;
+    -fx-text-alignment: center;
+}
+
+.libraryTextBookTitle {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-text-alignment: center;
+}
+
+.libraryTextEmpty {
+    -fx-font-style: italic;
+    -fx-text-fill: gray;
+}
+
+.libraryImageShadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+

@@ -1,0 +1,29 @@
+# Maven build directories
+target/
+clientBR/target/
+serverBR/target/
+shared/target/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+
+*.md
+*.png
+
+*.mp4

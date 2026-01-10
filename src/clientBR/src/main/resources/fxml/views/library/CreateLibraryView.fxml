@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" spacing="10.0" styleClass="vboxLibrary" stylesheets="@../../../css/CommonFeatures.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uninsubria.client.controller.homepage.libreria.CreateLibraryController">
+   <children>
+       <Label fx:id="libraryNameLabel" styleClass="libraryTitle" stylesheets="@../../../css/CommonFeatures.css" text="%createlibrary.label.name" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+             <TextField fx:id="libraryNameField" maxWidth="250.0" promptText="%createlibrary.prompt.library.name" styleClass="textFieldForgotPassword" stylesheets="@../../../css/CommonFeatures.css" />
+            <Label fx:id="libraryNameStatusLabel" />
+         </children>
+      </HBox>
+       <VBox fx:id="vboxContainer" alignment="CENTER" prefHeight="500.0" prefWidth="600.0" visible="false">
+         <children>
+              <Label fx:id="selectBooksLabel" prefHeight="17.0" prefWidth="79.0" text="%createlibrary.label.select.books" />
+              <TextField fx:id="searchBooksField" promptText="%createlibrary.prompt.search.books" />
+               <ScrollPane fitToWidth="true" prefHeight="350.0" prefWidth="600.0" vbarPolicy="AS_NEEDED">
+                 <content>
+                    <ListView fx:id="booksListView" prefHeight="-1" prefWidth="600.0" />
+                 </content>
+              </ScrollPane>
+              <Button fx:id="saveLibraryButton" mnemonicParsing="false" prefWidth="86.0" style="-fx-padding: 10 20 10 20; -fx-font-size: 14px;" text="%createlibrary.button.save" />
+         </children>
+      </VBox>
+   </children>
+</VBox>

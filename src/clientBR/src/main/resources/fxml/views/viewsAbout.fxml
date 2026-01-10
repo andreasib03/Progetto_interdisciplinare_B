@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane prefHeight="750.0" prefWidth="1500.0" styleClass="borderBarAbout" stylesheets="@../../css/CommonFeatures.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uninsubria.client.controller.homepage.help.viewAbouts">
+   <center>
+      <HBox alignment="CENTER" prefHeight="441.0" prefWidth="1206.0" BorderPane.alignment="TOP_LEFT">
+         <children>
+            <VBox fx:id="vboxDocsUtente" alignment="CENTER" maxHeight="150.0" prefWidth="150.0" styleClass="vboxtransparent" stylesheets="@../../css/CommonFeatures.css" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="153.0" prefWidth="318.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#downloadManualDocs" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/docs_image.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="191.0" styleClass="labelAbout" stylesheets="@../../css/CommonFeatures.css" text="%help.userdoc" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="90.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" lineSpacing="2.0" prefHeight="46.0" prefWidth="191.0" styleClass="labelAboutDesc" stylesheets="@../../css/CommonFeatures.css" text="%help.userdoc.desc" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="107.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="9.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxDocsTecnico" maxHeight="150.0" prefWidth="150.0" styleClass="vboxtransparent" stylesheets="@../../css/CommonFeatures.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="153.0" prefWidth="318.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#downloadTecnicalDocs" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/docs_image.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="191.0" styleClass="labelAbout" stylesheets="@../../css/CommonFeatures.css" text="%help.techdoc" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="90.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" lineSpacing="2.0" prefHeight="45.0" prefWidth="187.0" styleClass="labelAboutDesc" stylesheets="@../../css/CommonFeatures.css" text="%help.techdoc.desc" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="107.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="9.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxFAQ" maxHeight="150.0" prefWidth="150.0" styleClass="vboxtransparent" stylesheets="@../../css/CommonFeatures.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="153.0" prefWidth="318.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#onOpenFAQ" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/FAQ_images.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="191.0" styleClass="labelAbout" stylesheets="@../../css/CommonFeatures.css" text="%help.faq" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="90.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" lineSpacing="2.0" prefHeight="42.0" prefWidth="187.0" styleClass="labelAboutDesc" stylesheets="@../../css/CommonFeatures.css" text="%help.faq.desc" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="107.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="9.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxVideo" maxHeight="150.0" prefWidth="150.0" styleClass="vboxtransparent" stylesheets="@../../css/CommonFeatures.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="153.0" prefWidth="318.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#onOpenVideoList" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/VideoIllustrativi.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" prefHeight="14.0" prefWidth="191.0" styleClass="labelAbout" stylesheets="@../../css/CommonFeatures.css" text="%help.video" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="90.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" lineSpacing="2.0" prefHeight="42.0" prefWidth="187.0" styleClass="labelAboutDesc" stylesheets="@../../css/CommonFeatures.css" text="%help.video.desc" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="107.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="9.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="vboxFeedback" maxHeight="150.0" prefWidth="150.0" styleClass="vboxtransparent" stylesheets="@../../css/CommonFeatures.css" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="153.0" prefWidth="318.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#onOpenContactForm" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="0.0">
+                                 <graphic>
+                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../images/Feedback_test.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Label alignment="CENTER" layoutX="14.0" prefHeight="14.0" prefWidth="191.0" styleClass="labelAbout" stylesheets="@../../css/CommonFeatures.css" text="%help.feedback" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="90.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="16.0" layoutY="10.0" lineSpacing="2.0" prefHeight="44.0" prefWidth="187.0" styleClass="labelAboutDesc" stylesheets="@../../css/CommonFeatures.css" text="%help.feedback.desc" textAlignment="CENTER" wrapText="true" AnchorPane.topAnchor="107.0">
+                                 <font>
+                                    <Font name="Lucida Console" size="9.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="50.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="294.0" prefWidth="1500.0" spacing="70.0" styleClass="vboxtransparent" stylesheets="@../../css/CommonFeatures.css">
+         <children>
+            <Label prefHeight="50.0" prefWidth="364.0" styleClass="helpTitle" stylesheets="@../../css/CommonFeatures.css" text="%help.title">
+               <font>
+                  <Font name="Lucida Sans Unicode" size="30.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" maxWidth="500.0" spacing="70.0" styleClass="vboxtransparent" stylesheets="@../../css/CommonFeatures.css">
+               <children>
+                  <HBox fx:id="HBoxContent" alignment="CENTER_LEFT" prefHeight="40.0" spacing="5.0" style="-fx-border-color: #D4E4FA; -fx-border-radius: 20;">
+                     <children>
+                        <TextField fx:id="searchingBarAbout" promptText="%help.searchbar" styleClass="helpSearchBar" stylesheets="@../../css/CommonFeatures.css" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Button fx:id="buttonSearching" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #75B1FF; -fx-background-radius: 20;">
+                           <graphic>
+                              <FontIcon iconLiteral="fas-search" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label styleClass="helpTitleDesc" stylesheets="@../../css/CommonFeatures.css" text="%help.searchbar.desc">
+                     <font>
+                        <Font name="Lucida Sans Unicode" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

@@ -1,0 +1,1 @@
+File di testo con indicazioni precise sull'installazione e sulla compilazione, specificando i comandi Maven da utilizzare con javadoc

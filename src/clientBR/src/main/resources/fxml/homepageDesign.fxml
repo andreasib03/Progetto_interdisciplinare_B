@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane fx:id="root" onMousePressed="#closeListView" prefHeight="1000.0" prefWidth="1850.0" styleClass="root" stylesheets="@../css/CommonFeatures.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uninsubria.client.controller.homepage.home.ControllerDesign">
+   <children>
+
+      <!-- 🔳 CARD CENTRALE BIANCA -->
+      <VBox fx:id="mainCard" maxHeight="950.0" maxWidth="1800.0" prefHeight="961.0" prefWidth="1793.0" styleClass="vboxRoot" stylesheets="@../css/CommonFeatures.css">
+         <children>
+
+            <!-- 🔝 BARRA SUPERIORE -->
+            <HBox alignment="CENTER_LEFT" maxHeight="92.0" prefHeight="90.0" prefWidth="1760.0" spacing="10">
+               <children>
+
+                  <!-- LOGO PARTE SINISTRA -->
+                  <HBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefWidth="1760.0" translateX="5.0">
+                     <children>
+
+                        <ImageView fx:id="logoImage" fitHeight="95.0" fitWidth="202.0" pickOnBounds="true" preserveRatio="true" scaleX="1.2" scaleY="1.2">
+                           <image>
+                              <Image url="@../images/logo.png" />
+                           </image></ImageView>
+
+                        <Region prefHeight="81.0" prefWidth="491.0" HBox.hgrow="ALWAYS" />
+
+
+                        <HBox alignment="CENTER" spacing="10">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" maxHeight="45.0" prefHeight="45.0" prefWidth="453.0" styleClass="searchBar" stylesheets="@../css/CommonFeatures.css">
+                                 <children>
+      
+                                     <MenuButton fx:id="searchFilterMenu" contentDisplay="CENTER" mnemonicParsing="false" styleClass="categoriesMenu" text="%dashboard.search.all">
+                                        <items>
+                                           <MenuItem fx:id="searchByAll" mnemonicParsing="false" text="%dashboard.search.all" />
+                                           <MenuItem fx:id="searchByTitle" mnemonicParsing="false" text="%dashboard.search.title" />
+                                           <MenuItem fx:id="searchByAuthor" mnemonicParsing="false" text="%dashboard.search.authors" />
+                                           <MenuItem fx:id="searchByAuthorAndYear" mnemonicParsing="false" text="%dashboard.search.authors.years" />
+                                        </items>
+                                     </MenuButton>
+      
+                                          <Line endX="-80.0" endY="15.760099411010742" startX="-79.99995422363281" startY="53.05299377441406" stroke="#d3d3d3" />
+      
+                                           <TextField fx:id="searchingBooks" prefHeight="25.0" prefWidth="300.0" promptText="%dashboard.search.prompt" styleClass="categoriesMenu" stylesheets="@../css/CommonFeatures.css" />
+                                  </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+
+                        <HBox alignment="CENTER" prefHeight="83.0" prefWidth="587.0" spacing="10.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <StackPane fx:id="contenitorIconLoginProfile" maxHeight="75.0" prefHeight="75.0" prefWidth="75.0" styleClass="circle-border" stylesheets="@../css/CommonFeatures.css">
+                                       <children>
+                                          <ImageView fx:id="profileImageView" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </StackPane>
+                                    <MenuButton fx:id="iconLoginProfile" maxHeight="30.0" mnemonicParsing="false" popupSide="TOP" styleClass="menuButton" stylesheets="@../css/CommonFeatures.css">
+                                      <items>
+                                        <MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+                                      </items>
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </MenuButton>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="loginRegisterButton" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#openLoginWindow" styleClass="loginRegisterButtonHome" stylesheets="@../css/CommonFeatures.css" text="%dashboard.login" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="842.0" prefWidth="1760.0" spacing="10">
+               <children>
+                  <VBox prefHeight="545.0" prefWidth="170.0" styleClass="vboxDashboard" stylesheets="@../css/CommonFeatures.css">
+                     <children>
+
+                        <HBox fx:id="homeBox" alignment="CENTER">
+                           <children>
+                              <Button fx:id="homeButton" alignment="CENTER" onAction="#onHomeButtonAction" prefHeight="30.0" prefWidth="30.0" styleClass="navBarHome" stylesheets="@../css/CommonFeatures.css">
+                                 <graphic>
+                                    <FontIcon fx:id="iconHome" iconLiteral="fas-home" styleClass="fontawesomeDefault" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="titleHomeButton" prefHeight="28.0" prefWidth="90.0" styleClass="labelTitleHome" stylesheets="@../css/CommonFeatures.css" text="%dashboard.button.home" visible="false">
+                                 <font>
+                                    <Font name="Lucida Sans Unicode" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Region maxHeight="30.0" VBox.vgrow="ALWAYS" />
+                        <HBox fx:id="categoriesBox" alignment="TOP_CENTER">
+                           <children>
+                              <Button fx:id="categoriesButton" alignment="CENTER" onAction="#onCategoriesButtonAction" prefHeight="30.0" prefWidth="30.0" styleClass="navBarHome" stylesheets="@../css/CommonFeatures.css">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontIcon fx:id="categoriesIcon" iconLiteral="fas-star" styleClass="fontawesomeDefault" />
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="titleCategoriesButton" prefHeight="28.0" prefWidth="90.0" styleClass="labelTitleHome" stylesheets="@../css/CommonFeatures.css" text="%dashboard.button.categories" visible="false">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Region maxHeight="30.0" VBox.vgrow="ALWAYS" />
+                        <HBox fx:id="librariesBox" alignment="TOP_CENTER">
+                           <children>
+                              <Button fx:id="libraryButton" alignment="CENTER" onAction="#onlibrariesButtonAction" prefHeight="30.0" prefWidth="30.0" styleClass="navBarHome" stylesheets="@../css/CommonFeatures.css">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <graphic>
+                                    <FontIcon fx:id="librariesIcon" iconLiteral="fab-leanpub" styleClass="fontawesomeDefault" />
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="titleLibrariesButton" prefHeight="28.0" prefWidth="90.0" styleClass="labelTitleHome" stylesheets="@../css/CommonFeatures.css" text="%dashboard.button.libraries" visible="false">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <Region maxHeight="30.0" VBox.vgrow="ALWAYS" />
+                        <Line endX="150.0" stroke="#d3d3d3" />
+                        <Region maxHeight="30.0" VBox.vgrow="ALWAYS" />
+                        <HBox fx:id="settingsBox" alignment="CENTER">
+                           <children>
+                              <Button fx:id="settingsButton" alignment="CENTER" mnemonicParsing="false" onAction="#onSettingsButtonAction" prefHeight="30.0" prefWidth="30.0" styleClass="navBarHome" stylesheets="@../css/CommonFeatures.css">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <FontIcon fx:id="settingsIcon" iconLiteral="fas-cogs" styleClass="fontawesomeDefault" />
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="titleSettingsButton" contentDisplay="CENTER" prefHeight="25.0" prefWidth="89.0" styleClass="labelTitleHome" stylesheets="@../css/CommonFeatures.css" text="%dashboard.button.settings" visible="false" HBox.hgrow="ALWAYS">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="14.5" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <Region maxHeight="30.0" VBox.vgrow="ALWAYS" />
+                        <HBox fx:id="aboutBox" alignment="CENTER">
+                           <children>
+                              <Button fx:id="aboutButton" alignment="CENTER" mnemonicParsing="false" onAction="#onAboutButtonAction" prefHeight="30.0" prefWidth="30.0" styleClass="navBarHome" stylesheets="@../css/CommonFeatures.css">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <FontIcon fx:id="aboutIcon" iconLiteral="fas-question-circle" styleClass="fontawesomeDefault" />
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="titleAboutButton" contentDisplay="CENTER" prefHeight="25.0" prefWidth="90.0" styleClass="labelTitleHome" stylesheets="@../css/CommonFeatures.css" text="%dashboard.button.help" visible="false">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Region maxHeight="30.0" VBox.vgrow="ALWAYS" />
+                        <HBox fx:id="exitBox" alignment="CENTER">
+                           <children>
+                              <Button fx:id="exitButton" alignment="CENTER" mnemonicParsing="false" onAction="#onExitButtonAction" prefHeight="30.0" prefWidth="30.0" styleClass="navBarHome" stylesheets="@../css/CommonFeatures.css">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <graphic>
+                                    <FontIcon fx:id="exitIcon" iconLiteral="fas-times" styleClass="fontawesomeDefault" />
+                                 </graphic>
+                              </Button>
+                              <Label fx:id="titleExitButton" contentDisplay="CENTER" prefHeight="25.0" prefWidth="90.0" styleClass="labelTitleHome" stylesheets="@../css/CommonFeatures.css" text="%dashboard.button.exit" visible="false">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="15.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+
+                  </VBox>
+                  <StackPane fx:id="stackPaneCenter" prefHeight="827.0" prefWidth="1585.0" styleClass="stackpane-background" stylesheets="@../css/CommonFeatures.css">
+                     <children>
+                        <Region prefHeight="672.0" prefWidth="755.0" styleClass="regionLogin" stylesheets="@../css/CommonFeatures.css" />
+                         <HBox fx:id="HBoxContent" alignment="CENTER" maxHeight="750.0" maxWidth="1500.0" styleClass="hboxContainerHome" stylesheets="@../css/CommonFeatures.css">
+                            <children>
+                               <Button fx:id="loginInfoButton" alignment="CENTER" disable="true" mnemonicParsing="false" opacity="0.0" prefHeight="297.0" prefWidth="683.0" styleClass="loginInfoButtonNotAccess" stylesheets="@../css/CommonFeatures.css" text="%homepage.notAccess" visible="false">
+                                  <font>
+                                     <Font size="25.0" />
+                                  </font></Button>
+
+                               <!-- Sezione Raccomandazioni -->
+                               <VBox fx:id="recommendationsContainer" spacing="15.0" styleClass="recommendations-section" stylesheets="@../css/CommonFeatures.css" visible="false">
+                                  <children>
+                                     <Label fx:id="recommendationsTitle" styleClass="recommendations-title" stylesheets="@../css/CommonFeatures.css" text="Raccomandazioni per te">
+                                        <font>
+                                           <Font name="Montserrat VariableFont_wght" size="24.0" />
+                                        </font>
+                                     </Label>
+                                     <StackPane fx:id="recommendationsLoadingPane" styleClass="recommendations-loading" stylesheets="@../css/CommonFeatures.css">
+                                        <children>
+                                           <ProgressIndicator fx:id="recommendationsLoadingIndicator" prefHeight="50.0" prefWidth="50.0" visible="false" />
+                                           <HBox fx:id="recommendationsContent" alignment="CENTER_LEFT" spacing="15.0" styleClass="recommendations-content" stylesheets="@../css/CommonFeatures.css">
+                                              <children>
+                                                 <!-- I libri raccomandati verranno aggiunti dinamicamente qui -->
+                                              </children>
+                                           </HBox>
+                                        </children>
+                                     </StackPane>
+                                  </children>
+                               </VBox>
+                            </children>
+                         </HBox>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+       <AnchorPane maxHeight="350.0" maxWidth="360.0">
+          <StackPane.margin>
+             <Insets bottom="385.0" left="190.0" />
+          </StackPane.margin>
+           <children>
+              <ListView fx:id="resultsListView" disable="true" prefHeight="300.0" prefWidth="360.0" visible="false" />
+           </children>
+       </AnchorPane>
+   </children>
+</StackPane>

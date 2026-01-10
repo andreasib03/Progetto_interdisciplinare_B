@@ -1,0 +1,83 @@
+.vboxPrimary{
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.anchorpane{
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.labelTitle{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.labelDesc{
+    -fx-font-size: 16px;
+    -fx-font-weight: normal;
+    -fx-text-fill: white;
+
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.textArea{
+
+    -fx-border-radius: 7px;
+    -fx-border-color: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: white;
+
+    border-radius: 10px;
+    border-color: white;
+    background-color: #2a2a3d;
+    color: white;
+}
+
+.labelRed{
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    color: red;
+}
+
+.labelGreen{
+    -fx-text-fill: green;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    color: green;
+}
+
+.labelInfo{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+}
+
+.labelBlue{
+    -fx-text-fill: blue;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    font-weight: bold;
+    font-size: 14px;
+    color: blue;
+}
+
+.progressIndicatorBlue{
+    -fx-progress-color: white;
+}
+

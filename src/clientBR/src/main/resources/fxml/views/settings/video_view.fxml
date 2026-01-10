@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToWidth="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.10" fx:controller="it.uninsubria.client.controller.homepage.help.VideoListController">
+   <content>
+      <VBox fx:id="videoListContainer" prefHeight="345.0" prefWidth="600.0" spacing="10.0" style="-fx-padding: 10;" />
+   </content>
+</ScrollPane>

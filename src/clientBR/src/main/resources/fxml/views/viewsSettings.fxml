@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1500.0" styleClass="borderBarAbout" stylesheets="@../../css/CommonFeatures.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.uninsubria.client.controller.homepage.settings.viewSettings">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="buttonSettingsWindow" mnemonicParsing="false" onAction="#onLoadWindowSettings" styleClass="navBarSettings" stylesheets="@../../css/CommonFeatures.css" text="%settings.appareance" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonSettingsModifyProfile" mnemonicParsing="false" onAction="#onLoadModifyProfile" styleClass="navBarSettings" stylesheets="@../../css/CommonFeatures.css" text="%settings.profile" HBox.hgrow="ALWAYS" />
+            <Button fx:id="buttonSettingsChangePassword" mnemonicParsing="false" onAction="#onLoadChangePassword" styleClass="navBarSettings" stylesheets="@../../css/CommonFeatures.css" text="Password" HBox.hgrow="ALWAYS" />
+            <Button fx:id="buttonSettingsDeleteAccount" mnemonicParsing="false" onAction="#onLoadDeleteaccount" styleClass="navBarSettings" stylesheets="@../../css/CommonFeatures.css" text="%settings.delete.account" />
+         </children>
+      </HBox>
+      <HBox fx:id="hboxContentModifying" alignment="CENTER" prefHeight="650.0" prefWidth="1150.0">
+         <children>
+            <Button fx:id="buttonAccessDenied" alignment="CENTER" disable="true" mnemonicParsing="false" styleClass="notAccess" stylesheets="@../../css/CommonFeatures.css" text="%homepage.notAccess" visible="false">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

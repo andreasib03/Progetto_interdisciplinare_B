@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.Region?>
+
+
+<Region prefHeight="750.0" prefWidth="1500.0" styleClass="exitRegion" stylesheets="@../../css/CommonFeatures.css" xmlns="http://javafx.com/javafx/17.0.10" xmlns:fx="http://javafx.com/fxml/1" />

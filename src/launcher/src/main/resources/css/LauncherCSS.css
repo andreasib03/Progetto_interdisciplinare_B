@@ -1,0 +1,69 @@
+.buttons{
+    cursor: hand;
+    background-color: #3498db;
+    -fx-background-color: #3498db;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+}
+
+.combo-box{
+    -fx-cursor: hand;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #3498db;
+    cursor: hand;
+    border-radius: 10px;
+    background-color: #3498db;
+}
+
+.combo-box .list-cell{
+    -fx-text-fill: white;
+    -fx-background-color: #3498db;
+
+    background-color: #3498db;
+}
+
+.combo-box .list-cell:hover{
+    -fx-background-color: #3a3a4d;
+
+    background-color: #3a3a4d;
+}
+
+.combo-box .arrow{
+    -fx-background-color: white;
+
+    background-color: white;
+}
+
+.labelTitle{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.labelDesc{
+    -fx-font-size: 16px;
+    -fx-font-weight: normal;
+    -fx-text-fill: white;
+
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.labelDisclaimer{
+    -fx-font-size: 10px;
+    -fx-font-weight: lighter;
+    -fx-text-fill: white;
+
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+.vboxPrimary{
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}

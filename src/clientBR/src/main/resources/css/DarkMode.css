@@ -1,0 +1,1302 @@
+@import url('CommonFeatures.css');
+
+/* Dark Mode Color Overrides */
+#logoImage {
+    -fx-image: url("../images/logo_black.png");
+}
+
+.root {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.vboxRoot {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.vboxForgotPassword {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.categoriesTitle {
+    -fx-text-fill: #75B1FF;
+}
+
+.categoriesLoading {
+    -fx-text-fill: #FFFFFF;
+}
+
+.textfieldForgotPassword {
+    border-color: #2c88cc;
+    -fx-border-color: #2c88cc;
+}
+
+.labelForgotPassword {
+    -fx-text-fill: white;
+}
+
+.buttonForgotPassword {
+    background-color: #2c88cc;
+    -fx-background-color: #2c88cc;
+    -fx-text-fill: white;
+}
+
+.dialogForgotPassword .dialog-pane {
+    background-color: #1a202c;
+    border-color: #4a5568;
+    border-width: 1px;
+    border-radius: 8px;
+    padding: 20px;
+    -fx-background-color: #1a202c;
+    -fx-border-color: #4a5568;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-spacing: 15px;
+}
+
+.textFieldForgotPassword {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    border-color: #4a5568;
+    border-width: 1px;
+    background-color: #1a202c;
+
+    -fx-pref-width: 300px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #4a5568;
+    -fx-border-width: 1px;
+    -fx-background-color: #1a202c;
+    -fx-text-fill: white;
+}
+
+.backButtonLogin {
+    -fx-text-fill: white;
+}
+
+.buttonModifyProfile {
+    border-color: white;
+    -fx-border-color: white;
+    -fx-text-fill: #C7FE65;
+}
+
+.buttonCancelModifyProfile {
+    border-color: white;
+    -fx-border-color: white;
+}
+
+.libraryTitle {
+    -fx-text-fill: white;
+}
+
+/* Category Detail Controller Dark Mode Styles */
+.categoryDetailRoot {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.categoryBackButton {
+    border-color: #75B1FF;
+    -fx-border-color: #75B1FF;
+    -fx-text-fill: #75B1FF;
+}
+
+.categoryBackButton:hover {
+    background-color: rgba(117, 177, 255, 0.1);
+    -fx-background-color: rgba(117, 177, 255, 0.1);
+}
+
+.categoryTitleLabel {
+    -fx-text-fill: #75B1FF;
+}
+
+.categoryStatsLabel {
+    -fx-text-fill: #CCCCCC;
+}
+
+.categorySearchField {
+    border-color: white;
+    background-color: #2A2A3D;
+    -fx-background-color: #2A2A3D;
+    -fx-border-color: white;
+    -fx-text-fill: #FFFFFF;
+}
+
+.categorySearchField:focused {
+    border-color: #75B1FF;
+    -fx-border-color: #75B1FF;
+}
+
+.categorySortLabel {
+    -fx-text-fill: #CCCCCC;
+}
+
+.categorySortComboBox {
+    border-color: #4A5568;
+    background-color: #2A2A3D;
+    -fx-background-color: #2A2A3D;
+    -fx-border-color: #4A5568;
+    -fx-text-fill: #FFFFFF;
+}
+
+.categorySortComboBox:focused {
+    border-color: #75B1FF;
+    -fx-border-color: #75B1FF;
+}
+
+.categorySortComboBox .list-cell {
+    background-color: #2A2A3D;
+    -fx-background-color: #2A2A3D;
+    -fx-text-fill: #FFFFFF;
+}
+
+.categorySortComboBox .list-cell:hover {
+    background-color: #3A3A4D;
+    -fx-background-color: #3A3A4D;
+}
+
+.categoryResetButton {
+    background-color: #6c757d;
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+}
+
+.categoryResetButton:hover {
+    background-color: #5a6268;
+    -fx-background-color: #5a6268;
+}
+
+.categoryReloadButton {
+    background-color: #75B1FF;
+    -fx-background-color: #75B1FF;
+    -fx-text-fill: white;
+}
+
+.categoryReloadButton:hover {
+    background-color: #218838;
+    -fx-background-color: #218838;
+}
+
+.categorySortComboBox .list-cell {
+    background-color: #2A2A3D;
+    -fx-background-color: #2A2A3D;
+    -fx-text-fill: #FFFFFF;
+}
+
+.categoryEmptyIcon {
+    fill: #6C757D;
+    -fx-fill: #6C757D;
+}
+
+.categoryEmptyTitle {
+    -fx-text-fill: #CCCCCC;
+}
+
+.categoryEmptyMessage {
+    -fx-text-fill: #9CA3AF;
+}
+
+/* Category Book Cards Dark Mode */
+.categoryBookCard {
+    background-color: #2A2A3D;
+    border-color: white;
+    border-radius: 5;
+    -fx-background-color: #2A2A3D;
+    -fx-border-color: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.categoryBookCard:hover {
+    background-color: #3A3A4D;
+    border-color: #75B1FF;
+    -fx-background-color: #3A3A4D;
+    -fx-border-color: #75B1FF;
+}
+
+
+.categoryBookAuthor {
+    -fx-text-fill: #CCCCCC;
+}
+
+.categoryBookYear {
+    -fx-text-fill: #9CA3AF;
+}
+
+.categoryBookDescription {
+    -fx-text-fill: #E5E7EB;
+}
+
+.categoryBookButton {
+    background-color: #6c757d;
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+}
+
+.categoryBookButton:hover {
+    background-color: #5a6268;
+    -fx-background-color: #5a6268;
+}
+
+.hboxContainerHome {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.titleLabelVideo {
+    fill: white;
+    -fx-fill: white;
+}
+
+
+.descriptionLabelVideo {
+    -fx-text-fill: #FFFFFF;
+}
+
+
+.regionContent {
+    background-color: linear-gradient(to bottom, #2a2a3d, #1e1e2f);
+    -fx-background-color: linear-gradient(to bottom, #2a2a3d, #1e1e2f);
+}
+
+.menuItemSearching {
+    background-color: white;
+    -fx-background-color: white;
+}
+
+/*Abouts.css*/
+.list-view {
+    background-color: #1e1e2f;
+    border-color: #444;
+    -fx-background-color: #1e1e2f;
+    -fx-border-color: #444;
+}
+
+.list-cell {
+    background-color: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: #dddddd;
+}
+
+
+
+.borderBarAbout {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.helpTitle {
+    -fx-text-fill: white;
+}
+
+.helpTitleDesc {
+    -fx-text-fill: white;
+}
+
+.helpSearchBar {
+    background-color: white;
+    border-color: white;
+    border-width: 0.4;
+    border-radius: 15;
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-radius: 15;
+    -fx-border-width: 0.4;
+}
+
+/*Alert.css*/
+.dialog-pane {
+    background-color: #2b2b2b;
+    -fx-background-color: #2b2b2b;
+}
+
+.dialog-pane .content.label {
+    -fx-text-fill: #ffffff;
+}
+
+.buttonAlert {
+    background-color: #3a3a3a;
+    -fx-background-color: #3a3a3a;
+    -fx-text-fill: #ffffff;
+}
+
+.buttonAlert:hover {
+    -fx-background-color: #575757;
+    background-color: #575757;
+}
+
+/*Contacts.css*/
+.text-fieldContact,
+.text-areaContact {
+    background-color: #2a2a3d;
+    border-color: #555;
+    -fx-background-color: #2a2a3d;
+    -fx-border-color: #555;
+    -fx-text-fill: #dddddd;
+}
+
+.buttonContact {
+    background-color: #3D5A99;
+    -fx-background-color: #3D5A99;
+    -fx-text-fill: white;
+}
+
+.buttonContact:hover {
+    background-color: #2C3E50;
+    -fx-background-color: #2C3E50;
+}
+
+.labelContact {
+    -fx-text-fill: #dddddd;
+}
+
+/*FAQ.css*/
+.titled-pane {
+    background-color: #2a2a3d;
+    border-color: #3D5A99;
+    -fx-background-color: #2a2a3d;
+    -fx-border-color: #3D5A99;
+}
+
+.titled-pane>.title {
+    background-color: linear-gradient(to right, #3D5A99, #5A79BF);
+    -fx-text-fill: white;
+}
+
+.titled-pane>.content {
+    background-color: #2a2a3d;
+    -fx-text-fill: #dddddd;
+}
+
+.titled-pane>.ancorpane {
+    -fx-background-color: #2a2a3d;
+    background-color: #2a2a3d;
+}
+
+.titled-pane>.title>.arrow-button>.arrow {
+    background-color: #dddddd;
+    -fx-background-color: #dddddd;
+}
+
+/*Impostazioni.css*/
+.switch-buttonSettings {
+    background-color: #555;
+    -fx-background-color: #555;
+}
+
+.switch-buttonSettings:selected {
+    -fx-background-color: #4caf50;
+    background-color: #4caf50;
+}
+
+.switch-buttonSettings .thumb {
+    background-color: #dddddd;
+    -fx-background-color: #dddddd;
+}
+
+.borderBarSettings {
+    border-color: #777;
+    -fx-border-color: #777;
+}
+
+.title-labelSettings {
+    -fx-text-fill: white;
+}
+
+.textfield-settings {
+    background-color: #2a2a3d;
+    border-color: #555;
+    -fx-background-color: #2a2a3d;
+    -fx-border-color: #555;
+    -fx-text-fill: #dddddd;
+}
+
+.navBarSettings {
+    background-color: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.button-filledSettings {
+    background-color: transparent;
+    border-color: #3D5A99;
+    -fx-text-fill: #75B1FF;
+    -fx-border-radius: 15;
+    -fx-background-color: transparent;
+    -fx-border-color: #75B1FF;
+    border-radius: 15;
+}
+
+.noSelectedButton {
+    background-color: transparent;
+    border-color: #777;
+    -fx-background-color: transparent;
+    -fx-border-color: #777;
+}
+
+.selectedButton {
+    background-color: #3D5A99;
+    border-color: #ffffff;
+    -fx-background-color: #3D5A99;
+    -fx-border-color: #ffffff;
+}
+
+/*Login.css*/
+.labelColorLogin {
+    fill: #75B1FF;
+    -fx-fill: #75B1FF;
+}
+
+.stackPaneColorLogin {
+    background-color: linear-gradient(to bottom, #2a2a3d, #1e1e2f);
+    -fx-background-color: linear-gradient(to bottom, #2a2a3d, #1e1e2f);
+}
+
+.loginbuttonLogin {
+    -fx-background-color: #3D5A99;
+    background-color: #3D5A99;
+}
+
+.vboxLogin {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.regionLogin {
+    background-color: white;
+    -fx-background-color: #a0a0b0;
+}
+
+.checkboxLoggedIn {
+    -fx-text-fill: white;
+}
+
+
+.buttonBack {
+    background-color: transparent;
+    border-color: #D4E4FA;
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-text-fill: white;
+}
+
+.labelTitleDesc {
+    -fx-text-fill: white;
+}
+
+
+/*Registration.css*/
+.button-registration {
+    background-color: #3D5A99;
+    -fx-background-color: #3D5A99;
+    -fx-text-fill: white;
+}
+
+.labelRegister {
+    -fx-text-fill: white;
+}
+
+.labelRegisterDesc {
+    -fx-text-fill: white;
+}
+
+.notValid {
+    -fx-text-fill: white;
+}
+
+.title-registration {
+    fill: #009dc7;
+    -fx-text-fill: #009dc7;
+}
+
+.button-nopeRegistration {
+    background-color: #555;
+    -fx-background-color: #555;
+    -fx-text-fill: white;
+}
+
+
+.textareasRegistration {
+    -fx-text-fill: #2a2a3d;
+}
+
+/*Splashscreen.css*/
+.pretty-labelSplashScreen {
+    background-color: #2a2a3d;
+    border-color: #3D5A99;
+    -fx-text-fill: #dddddd;
+    -fx-background-color: #2a2a3d;
+    -fx-border-color: #3D5A99;
+}
+
+.pretty-progressSplashScreen {
+    -fx-accent: #00ADB5;
+    -fx-control-inner-background: #444;
+}
+
+
+/*Styles.css*/
+.fontawesomeWhite {
+    fill: #ffffff;
+    -fx-fill: #ffffff;
+}
+
+.fontawesomeDefault {
+    fill: #cccccc;
+    -fx-fill: #cccccc;
+}
+
+.button-filledHome {
+    background-color: #2E5C8A;
+    -fx-background-color: #2E5C8A;
+}
+
+.loginRegisterButtonHome {
+    background-color: #6B7280;
+    -fx-background-color: #6B7280;
+    -fx-text-fill: #FFFFFF;
+}
+
+.menuButton {
+    -fx-background-color: #6B7280;
+    background-color: #6B7280;
+}
+
+.menuButton .label {
+    -fx-text-fill: white;
+}
+
+.menuButton .arrow {
+    -fx-background-color: white;
+    background-color: white;
+}
+
+.menu-item {
+    -fx-background-color: #2C3E50;
+    background-color: #2C3E50;
+}
+
+.menu-item .label {
+    -fx-text-fill: white;
+}
+
+
+
+
+/* More specific selectors for navBar buttons */
+Button.navBarHome {
+    -fx-background-color: #1e1e2f !important;
+    -fx-border-color: white !important;
+    -fx-text-fill: white !important;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    border-radius: 15;
+    background-color: #1e1e2f !important;
+    border-color: white !important;
+}
+
+.navBarHome {
+    background-color: #1e1e2f !important;
+    border-color: white !important;
+    -fx-background-color: #1e1e2f !important;
+    -fx-border-color: white !important;
+    -fx-text-fill: white !important;
+}
+
+.searchBar {
+    background-color: #2a2a3d;
+    -fx-background-color: #2a2a3d;
+}
+
+.searchBarButtonHome {
+    background-color: #3D5A99;
+    -fx-background-color: #3D5A99;
+    -fx-text-fill: white;
+}
+
+.scrollPaneLibrary {
+    -fx-background-color: #1e1e2f;
+    -fx-text-fill: white;
+    background-color: #1e1e2f;
+    -fx-border-color: white;
+    border-color: white;
+
+}
+
+.vboxLibrary {
+    border-width: 5;
+    background-color: #1e1e2f;
+    border-color: white;
+    border-radius: 15;
+    -fx-background-color: #1e1e2f;
+    -fx-border-color: white;
+
+}
+
+
+.categoriesMenu {
+    background-color: #2a2a3d;
+    border-color: #555555;
+    border-radius: 15;
+    -fx-background-color: #2a2a3d;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #888888;
+    -fx-border-color: #555555;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}
+
+.categoriesMenu .label {
+    -fx-text-fill: white;
+}
+
+.accessButtonHome {
+    border-color: #ff5555;
+    -fx-border-color: #ff5555;
+}
+
+.notAccess {
+    -fx-text-fill: #cc0000
+}
+
+.vboxWindowsSettings {
+    background-color: #1e1e2f;
+    border-color: white;
+    -fx-background-color: #1e1e2f;
+    -fx-border-color: white;
+}
+
+.labelLibrary{
+    -fx-text-fill: white;
+}
+
+.recapHBOX{
+    -fx-background-color:  transparent;
+    background-color:  transparent;
+    -fx-border-color: white;
+    border-color: white;
+    
+}
+
+.labelSettingsTheme {
+    -fx-text-fill: white;
+}
+
+.labelDescSettingsTheme {
+    -fx-text-fill: white;
+}
+
+
+.windowsSettingsBar {
+    border-color: white;
+    background-color: transparent;
+    -fx-border-color: white;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+
+.labelTitleHome {
+    -fx-text-fill: white;
+}
+
+.labelBoldHome {
+    -fx-text-fill: white;
+}
+
+.userLabel {
+    -fx-text-fill: white;
+}
+
+.noteLabel {
+    -fx-text-fill: #cccccc;
+}
+
+.vboxVignetteHome {
+    -fx-border-color: #444444;
+    border-color: #444444;
+}
+
+.aboutTitle{
+    -fx-text-fill: white;
+}
+
+.aboutDesc{
+    -fx-text-fill: white;
+}
+
+.vboxVignetteHome .label {
+    -fx-text-fill: #CCCCCC;
+}
+
+.exitRegion {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+/* Categories Controller Dark Mode Styles */
+.categoriesCard {
+    background-color: #2A2A3D;
+    border-color: #4A5568;
+    -fx-background-color: #2A2A3D;
+    -fx-border-color: #4A5568;
+}
+
+.categoriesCard:hover {
+    border-color: #75B1FF;
+    background-color: #3A3A4D;
+    -fx-background-color: #3A3A4D;
+    -fx-border-color: #75B1FF;
+}
+
+.categoriesButtonPrimary {
+    background-color: #75B1FF;
+    -fx-background-color: #75B1FF;
+    -fx-text-fill: white;
+}
+
+.categoriesButtonPrimary:hover {
+    background-color: #5aa0ff;
+    -fx-background-color: #5aa0ff;
+}
+
+.categoriesButtonPrimary:pressed {
+    background-color: #3a87ff;
+    -fx-background-color: #3a87ff;
+}
+
+.categoriesButtonSecondary {
+    background-color: #666;
+    -fx-background-color: #666;
+    -fx-text-fill: white;
+}
+
+.categoriesButtonSecondary:hover {
+    background-color: #555;
+    -fx-background-color: #555;
+}
+
+.categoriesButtonSecondary:pressed {
+    background-color: #333;
+    -fx-background-color: #333;
+}
+
+.categoriesButtonReset {
+    background-color: #95a5a6;
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+}
+
+.categoriesButtonReset:hover {
+    background-color: #7f8f90;
+    -fx-background-color: #7f8f90;
+}
+
+.categoriesButtonReset:pressed {
+    background-color: #6a797a;
+    -fx-background-color: #6a797a;
+}
+
+.categoriesListItem {
+    cursor: hand;
+    padding: 5;
+    -fx-cursor: hand;
+    -fx-padding: 5;
+}
+
+.categoriesTextSecondary {
+    -fx-text-fill: #CCCCCC;
+}
+
+.categoriesTextMuted {
+    -fx-text-fill: #9CA3AF;
+}
+
+.categoriesLoadingLabel {
+    -fx-text-fill: #CCCCCC;
+}
+
+.categoriesErrorLabel {
+    -fx-text-fill: #ff6b6b;
+}
+
+.categoriesRecommendationsBox {
+    background-color: #2A2A3D;
+    border-color: #4A5568;
+    -fx-background-color: #2A2A3D;
+    -fx-border-color: #4A5568;
+}
+
+.categoriesStatusItalic {
+    -fx-text-fill: #CCCCCC;
+}
+
+.categoriesRecommendationsLabel {
+    -fx-text-fill: #75B1FF;
+}
+
+.categoriesRecommendationsTitle {
+    -fx-text-fill: #75B1FF;
+}
+
+.categoriesRecommendationsDesc {
+    -fx-text-fill: #CCCCCC;
+}
+
+.buttonSettingsClickedHome {
+    background-color: #00ADB5;
+    -fx-background-color: #00ADB5;
+}
+
+.circle-borderHome {
+    border-color: #00ADB5;
+    -fx-border-color: #00ADB5;
+}
+
+.vboxDashboard {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+/*Valutazione.css*/
+.text-areaValutation {
+    border-color: #555;
+    -fx-border-color: #555;
+}
+
+/*Video.css*/
+.video-button {
+    background-color: #3D5A99;
+    -fx-background-color: #3D5A99;
+    -fx-text-fill: white;
+}
+
+.video-button:hover {
+    background-color: #2C3E50;
+    -fx-background-color: #2C3E50;
+}
+
+.allReviewsButton {
+    border-color: #2C3E50;
+    -fx-border-color: #2C3E50;
+    -fx-text-fill: white;
+}
+
+.scrollPaneAllReviews {
+    -fx-background-color: #2C3E50;
+    background-color: #2C3E50;
+}
+
+.hbox2AllReviews {
+    background-color: #2C3E50;
+    -fx-background-color: #2C3E50;
+    -fx-border-radius: 10;
+    border-radius: 10;
+}
+
+
+.bookdetailsimpleAnchorPane {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.bookdetailsimpleAnchorPane {
+    background-color: #2d2d3a;
+    -fx-background-color: #2d2d3a;
+}
+
+.vboxAllReviews {
+    background-color: #1e1e2f;
+    -fx-background-color: #1e1e2f;
+}
+
+.bookdetailsimpleVBOX {
+    background-color: #2d2d3a;
+    -fx-background-color: #2d2d3a;
+}
+
+
+hboxAllReviews {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+}
+
+.bookdetailsimpleHBOX {
+    background-color: #3a3a4a;
+    border-color: #555;
+    border-width: 0 0 1 0;
+    -fx-background-color: #3a3a4a;
+    -fx-border-color: #555;
+    -fx-border-width: 0 0 1 0;
+}
+
+.bookdetailsLabel {
+    font-weight: bold;
+    font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+}
+
+.bookdetailsLabeldesc {
+    font-weight: bold;
+    font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffffff;
+}
+
+.bookdetailsLabelsuperdesc {
+    font-size: 12px;
+    -fx-font-size: 12px;
+    -fx-text-fill: #cccccc;
+}
+
+.bookdetailsLabelitalic {
+    -fx-text-fill: white;
+}
+
+.bookdetailsimpleVBOX2 {
+    background-color: #404050;
+    border-color: #555;
+    border-width: 1px;
+    -fx-background-color: #404050;
+    -fx-border-color: #555;
+    -fx-border-width: 1px;
+}
+
+
+/* Stili per BookDetailController (BookDetailView.fxml) */
+VBox {
+    -fx-background-color: #2d2d3a;
+    background-color: #2d2d3a;
+}
+
+.backButton {
+    background-color: #555;
+    -fx-background-color: #555;
+    -fx-text-fill: white;
+}
+
+.backButton:hover {
+    background-color: #666;
+    -fx-background-color: #666;
+}
+
+.bookTitleLabel {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.bookAuthorLabel {
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 16px;
+    font-size: 16px;
+}
+
+.bookScrollPane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    background-color: transparent;
+    background: transparent;
+}
+
+.bookScrollContent {
+    background-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.bookYearLabel {
+    -fx-text-fill: #aaaaaa;
+    -fx-font-size: 14px;
+    font-size: 14px;
+}
+
+.bookDescriptionArea {
+    border-color: #555;
+    border-radius: 5;
+    -fx-control-inner-background: #3a3a4a;
+    -fx-border-color: #555;
+    -fx-border-radius: 5;
+    -fx-text-fill: #ffffff;
+}
+
+.bookDescriptionArea .content {
+    background-color: #3a3a4a;
+    -fx-background-color: #3a3a4a;
+}
+
+.reviewsSection {
+    border-color: #555;
+    border-radius: 5;
+    padding: 15;
+    background-color: #3a3a4a;
+    -fx-border-color: #555;
+    -fx-border-radius: 5;
+    -fx-padding: 15;
+    -fx-background-color: #3a3a4a;
+}
+
+.suggestionsSection {
+    border-color: #555;
+    border-radius: 5;
+    padding: 15;
+    background-color: #3a3a4a;
+    -fx-border-color: #555;
+    -fx-border-radius: 5;
+    -fx-padding: 15;
+    -fx-background-color: #3a3a4a;
+}
+
+.reviewsSection Label,
+.suggestionsSection Label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.loadingOverlay {
+    -fx-background-color: rgba(45, 45, 58, 0.9);
+    background-color: rgba(45, 45, 58, 0.9);
+}
+
+.loadingOverlay Label {
+    -fx-text-fill: #ffffff;
+}
+
+.noReviewsBox Label {
+    -fx-text-fill: #cccccc;
+}
+
+/* Elementi specifici del BookDetailController */
+.averagesGrid {
+    -fx-hgap: 20px;
+    -fx-vgap: 10px;
+}
+
+.averagesGrid Label {
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.criteriaDistribution VBox Label {
+    -fx-text-fill: #ffffff;
+}
+
+.commentsContainer .comment-item {
+    background-color: #404050;
+    border-color: #555;
+    border-radius: 5;
+    padding: 10;
+    -fx-background-color: #404050;
+    -fx-border-color: #555;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+}
+
+.commentsContainer .comment-item Label {
+    -fx-text-fill: #ffffff;
+}
+
+/* Stili per elementi di testo generici nei book detail */
+VBox Label {
+    -fx-text-fill: #ffffff;
+}
+
+VBox TextArea {
+    -fx-text-fill: #ffffff;
+}
+
+/* BookDetailController specific styles */
+.bookDetailMainContainer {
+    padding: 20;
+    background-color: #2d2d3a;
+    -fx-padding: 20;
+    -fx-background-color: #2d2d3a;
+}
+
+.loadingLabel {
+    font-size: 16px;
+    -fx-font-size: 16px;
+    -fx-text-fill: #cccccc;
+}
+
+.sectionTitle {
+    font-size: 18px;
+    font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.subsectionTitle {
+    font-weight: bold;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.noReviewsLabel {
+    font-style: italic;
+    -fx-text-fill: #cccccc;
+    -fx-font-style: italic;
+}
+
+/* BookDetailController dynamic elements */
+.criterionBox {
+    border-color: #555;
+    border-radius: 3;
+    padding: 8;
+    background-color: #3a3a4a;
+    -fx-border-color: #555;
+    -fx-border-radius: 3;
+    -fx-padding: 8;
+    -fx-background-color: #3a3a4a;
+}
+
+.commentBox {
+    border-color: #555;
+    border-radius: 3;
+    padding: 10;
+    background-color: #3a3a4a;
+    -fx-border-color: #555;
+    -fx-border-radius: 3;
+    -fx-padding: 10;
+    -fx-background-color: #3a3a4a;
+}
+
+.suggestionBox {
+    border-color: #555;
+    border-radius: 3;
+    padding: 8;
+    background-color: #3a3a4a;
+    -fx-border-color: #555;
+    -fx-border-radius: 3;
+    -fx-padding: 8;
+    -fx-background-color: #3a3a4a;
+}
+
+.authorLabel {
+    -fx-text-fill: #cccccc;
+}
+
+.viewButton {
+    background-color: #5a7fff;
+    font-size: 11px;
+    -fx-background-color: #5a7fff;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+}
+
+.viewButton:hover {
+    background-color: #4a6bff;
+    -fx-background-color: #4a6bff;
+}
+
+.secondaryLabel {
+    -fx-text-fill: #cccccc;
+}
+
+.italicLabel {
+    font-style: italic;
+    -fx-text-fill: #cccccc;
+    -fx-font-style: italic;
+}
+
+/* ProgressIndicator per il caricamento */
+VBox ProgressIndicator {
+    -fx-accent: #5a7fff;
+}
+
+/* Stili per i suggerimenti */
+VBox.suggestionsContainer VBox {
+    background-color: #404050;
+    border-color: #555;
+    border-radius: 5;
+    padding: 10;
+    -fx-background-color: #404050;
+    -fx-border-color: #555;
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+    -fx-background-radius: 5;
+}
+
+VBox.suggestionsContainer VBox:hover {
+    background-color: #4a4a5a;
+    -fx-background-color: #4a4a5a;
+}
+
+/* Library Controller Styles - Dark Theme */
+.libraryEmptyText {
+    -fx-text-fill: #ccc;
+}
+
+.libraryListView {
+    -fx-background-color: transparent;
+    -fx-border-color: #555;
+}
+
+.libraryBookLabel {
+    -fx-text-fill: #fff;
+}
+
+.libraryReviewButton {
+    -fx-background-color: #4a90e2;
+}
+
+.librarySuggestButton {
+    -fx-background-color: #e85555;
+}
+
+.libraryRemoveButton {
+    -fx-background-color: #7f8f90;
+}
+
+.librarySuggestionsButton {
+    -fx-background-color: #a66bbe;
+}
+
+.libraryButtonPrimary {
+    -fx-background-color: #4a90e2;
+}
+
+.libraryButtonWarning {
+    -fx-background-color: #f4a261;
+}
+
+.libraryTextPrimary {
+    -fx-text-fill: #ffffff;
+}
+
+.libraryTextSecondary {
+    -fx-text-fill: #cccccc;
+}
+
+.libraryTextMuted {
+    -fx-text-fill: #cccccc;
+}
+
+.libraryTextBookTitle {
+    -fx-text-fill: #ffffff;
+}
+
+.libraryTextEmpty {
+    -fx-text-fill: #888888;
+}
+
+.libraryImageShadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 4, 0, 0, 2);
+}
