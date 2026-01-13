@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 REM Book Recommender System Launcher (Windows)
 REM This script launches the Book Recommender System Launcher
 
@@ -27,20 +28,31 @@ echo Java version check passed
 
 REM Get the directory where this script is located
 set "SCRIPT_DIR=%~dp0"
-set "BIN_DIR=%SCRIPT_DIR%.."
+cd /d "%SCRIPT_DIR%.."
+set "BIN_DIR=%cd%"
 
 echo Java version check passed
 
 echo Bin directory: %BIN_DIR%
 
-REM Launch the application with proper JavaFX options
-java ^
-    --add-opens javafx.controls/com.sun.javafx.application=ALL-UNNAMED ^
-    --add-opens javafx.base/com.sun.javafx.reflect=ALL-UNNAMED ^
-    --add-opens javafx.graphics/com.sun.javafx.application=ALL-UNNAMED ^
-    -Djava.net.preferIPv4Stack=true ^
-    -Dfile.encoding=UTF-8 ^
-    -jar "%BIN_DIR%jar\launcher-1.0-SNAPSHOT-jar-with-dependencies.jar"
+REM Check if Maven is available
+mvn -version >nul 2>&1
+if %ERRORLEVEL% NEQ 0 (
+    echo ERROR: Maven is not installed or not in PATH
+    echo Please install Maven and try again
+    pause
+    exit /b 1
+)
+
+echo.
+echo INFO: Direct JAR execution may fail due to JavaFX classloader issues.
+echo INFO: Launching via Maven instead...
+echo.
+
+cd /d "%BIN_DIR%"
+mvn javafx:run -pl src/launcher -q
+
+echo Maven javafx:run finished
 
 echo Launcher exited
 pause

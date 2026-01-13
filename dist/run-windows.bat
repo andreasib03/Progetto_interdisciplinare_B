@@ -1,5 +1,3 @@
 @echo off
-REM Book Recommender Launcher (Windows)
-REM Simple wrapper to run the JAR application
-
-java -jar "%~dp0BookRecommender.jar" %*
+set DIR=%~dp0
+java --module-path "%DIR%lib" --add-modules javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media -jar "%DIR%BookRecommender.jar" %*
