@@ -1,0 +1,1 @@
+files eseguibili (.jar) dell'applicazione

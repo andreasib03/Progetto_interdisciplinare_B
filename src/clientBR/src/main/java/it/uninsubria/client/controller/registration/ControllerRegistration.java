@@ -289,7 +289,7 @@ public class ControllerRegistration extends ControllerBase{
             return;
         }
 
-        // Validazione ID (manteniamo quella esistente per ora)
+        // Validazione ID - deve avvenire PRIMA di chiedere la frase di recupero
         if (!User.checkID(ID)) {
             alertMessage.errorMessage(resolveString("%register.id.invalid"));
             return;

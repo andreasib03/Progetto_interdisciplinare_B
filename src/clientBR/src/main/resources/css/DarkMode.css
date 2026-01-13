@@ -1376,3 +1376,28 @@ VBox.suggestionsContainer VBox:hover {
 .categoryBookTitle {
     -fx-text-fill: white;
 }
+
+.textfield-about{
+    border-color: white;
+    background-color: #2A2A3D;
+    -fx-background-color: #2A2A3D;
+    -fx-border-color: white;
+    -fx-text-fill: black;
+}
+
+.textfield-about:focused {
+    border-color: #75B1FF;
+    -fx-border-color: #75B1FF;
+}
+
+.reviewText{
+    background-color: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.buttonReview{
+     background-color: #2c88cc;
+    -fx-background-color: #2c88cc;
+    -fx-text-fill: white;
+}

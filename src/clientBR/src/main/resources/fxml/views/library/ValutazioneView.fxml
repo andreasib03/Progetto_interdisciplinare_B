@@ -38,32 +38,32 @@
                  <!-- Riga 0: Stile -->
                  <Label fx:id="styleLabel" style="-fx-font-weight: bold" text="%review.criteria.style" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                  <Spinner fx:id="styleSpinner" editable="false" initialValue="1" max="5" min="1" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                  <TextArea fx:id="styleNoteArea" prefRowCount="2" promptText="%review.note.prompt.style" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                  <TextArea fx:id="styleNoteArea" prefRowCount="2" promptText="%review.note.prompt.style" styleClass="textfield-about" stylesheets="@../../../css/CommonFeatures.css" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
 
                  <!-- Riga 1: Contenuto -->
                  <Label fx:id="contentLabel" style="-fx-font-weight: bold" text="%review.criteria.content" GridPane.columnIndex="0" GridPane.rowIndex="1" />
                  <Spinner fx:id="contentSpinner" editable="false" initialValue="1" max="5" min="1" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                 <TextArea fx:id="contentNoteArea" prefRowCount="2" promptText="%review.note.prompt.content" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                 <TextArea fx:id="contentNoteArea" prefRowCount="2" promptText="%review.note.prompt.content" styleClass="textfield-about" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
 
                  <!-- Riga 2: Gradevolezza -->
                  <Label fx:id="pleasantnessLabel" style="-fx-font-weight: bold" text="%review.criteria.pleasantness" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                  <Spinner fx:id="pleasantnessSpinner" editable="false" initialValue="1" max="5" min="1" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                 <TextArea fx:id="pleasantnessNoteArea" prefRowCount="2" promptText="%review.note.prompt.pleasantness" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                 <TextArea fx:id="pleasantnessNoteArea" prefRowCount="2" promptText="%review.note.prompt.pleasantness" styleClass="textfield-about" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
 
                  <!-- Riga 3: Originalità -->
                  <Label fx:id="originalityLabel" style="-fx-font-weight: bold" text="%review.criteria.originality" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                  <Spinner fx:id="originalitySpinner" editable="false" initialValue="1" max="5" min="1" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                 <TextArea fx:id="originalityNoteArea" prefRowCount="2" promptText="%review.note.prompt.originality" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                 <TextArea fx:id="originalityNoteArea" prefRowCount="2" promptText="%review.note.prompt.originality" styleClass="textfield-about" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3" />
 
                  <!-- Riga 4: Edizione -->
                  <Label fx:id="editionLabel" style="-fx-font-weight: bold" text="%review.criteria.edition" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                  <Spinner fx:id="editionSpinner" editable="false" initialValue="1" max="5" min="1" prefWidth="80.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                 <TextArea fx:id="editionNoteArea" prefRowCount="2" promptText="%review.note.prompt.edition" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                 <TextArea fx:id="editionNoteArea" prefRowCount="2" promptText="%review.note.prompt.edition" styleClass="textfield-about" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4" />
 
                  <!-- Riga 5: Voto Finale -->
                  <Label fx:id="finalLabel" style="-fx-font-weight: bold" text="%review.criteria.final" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                 <Label fx:id="finalCalculatedLabel" style="-fx-font-style: italic; -fx-text-fill: #666;" text="%review.final.score.calculated" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                 <TextArea fx:id="finalNoteArea" prefRowCount="2" promptText="%review.note.prompt.final" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                 <Label fx:id="finalCalculatedLabel" styleClass="reviewText" text="%review.final.score.calculated" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5" />
+                 <TextArea fx:id="finalNoteArea" prefRowCount="2" promptText="%review.note.prompt.final" styleClass="textfield-about" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                </children>
              </GridPane>
             <Button fx:id="sumbitButton" mnemonicParsing="false" styleClass="buttonReview" stylesheets="@../../../css/CommonFeatures.css" text="Invia" />

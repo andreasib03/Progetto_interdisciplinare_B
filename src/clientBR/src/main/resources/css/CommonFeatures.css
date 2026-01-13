@@ -1630,3 +1630,35 @@
     -fx-font-size: 14px;
     -fx-alignment: center;
 }
+
+.textfield-about {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    border-width: 1px;
+    -fx-pref-width: 300px;
+    -fx-font-size: 14px;
+    -fx-padding: 8px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+}
+
+.textfield-about:focused {
+    border-width: 2px;
+    -fx-border-width: 2px;
+}
+
+.reviewText{
+    font-style: italic;
+    -fx-font-style: italic;
+}
+
+.buttonReview{
+    font-size: 14px;
+    padding: 10px;
+    -fx-font-size: 14px;
+    -fx-background-radius: 8px;
+    -fx-pref-width: 100px;
+    -fx-padding: 10px;
+}

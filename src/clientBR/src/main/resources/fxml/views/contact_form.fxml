@@ -28,7 +28,7 @@
       <VBox alignment="CENTER" spacing="10.0" styleClass="vboxtransparent">
          <children>
             <Label stylesheets="@../../css/CommonFeatures.css" text="%contact.form.message" />
-            <TextArea fx:id="messageArea" maxWidth="400.0" prefRowCount="6" promptText="%contact.form.message.prompt" stylesheets="@../../css/CommonFeatures.css" />
+            <TextArea fx:id="messageArea" maxWidth="400.0" prefRowCount="6" promptText="%contact.form.message.prompt" styleClass="textfield-about" stylesheets="@../../css/CommonFeatures.css" />
          </children>
       </VBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">

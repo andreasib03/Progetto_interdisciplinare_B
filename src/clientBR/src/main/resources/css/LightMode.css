@@ -17,56 +17,56 @@
 }
 
 
-.aboutDesc{
+.aboutDesc {
     -fx-text-fill: black;
 }
 
-.aboutTitle{
+.aboutTitle {
     -fx-text-fill: black;
 }
 
-.vboxWhite{
+.vboxWhite {
     background-color: #FFFFFF;
     border-color: white;
     -fx-background-color: #FFFFFF;
     -fx-border-color: white;
 }
 
-.backgroundAnchorPaneColored{
+.backgroundAnchorPaneColored {
     -fx-background-color: #FFFFFF;
     background-color: #FFFFFF;
 }
 
 
-#logoImage{
+#logoImage {
     -fx-image: url("../images/logo.png");
 }
 
-.vboxForgotPassword{
+.vboxForgotPassword {
     background-color: #FFFFFF;
     -fx-background-color: #FFFFFF;
 }
 
-.buttonForgotPassword{
+.buttonForgotPassword {
     background-color: #4A90E2;
     -fx-background-color: #4A90E2;
     -fx-text-fill: #FFFFFF;
 }
 
-.textfieldForgotPassword{
+.textfieldForgotPassword {
     border-color: #4A90E2;
     -fx-border-color: #4A90E2;
 }
 
-.backButtonLogin{
+.backButtonLogin {
     -fx-text-fill: black;
 }
 
-.labelForgotPassword{
+.labelForgotPassword {
     -fx-text-fill: #1F2937;
 }
 
-.dialogForgotPassword .dialog-pane{
+.dialogForgotPassword .dialog-pane {
     background-color: #F8FAFC;
     border-color: #E5E7EB;
     border-width: 1px;
@@ -82,22 +82,22 @@
     -fx-spacing: 15px;
 }
 
-.buttonModifyProfile{
-    border-color:  black;
+.buttonModifyProfile {
+    border-color: black;
     -fx-border-color: black;
-    -fx-text-fill:  green;
+    -fx-text-fill: green;
 }
 
-.buttonCancelModifyProfile{
+.buttonCancelModifyProfile {
     border-color: black;
     -fx-border-color: black;
 }
 
-.libraryTitle{
+.libraryTitle {
     -fx-text-fill: black;
 }
 
-.textFieldForgotPassword{
+.textFieldForgotPassword {
     font-size: 14px;
     padding: 8px;
     border-radius: 4px;
@@ -245,56 +245,56 @@
     -fx-background-color: #5a6268;
 }
 
-.categoriesTitle{
+.categoriesTitle {
     -fx-text-fill: #1F2937;
 }
 
-.categoriesLoading{
+.categoriesLoading {
     -fx-text-fill: #6B7280;
 }
 
-.cardVideoStyle{
+.cardVideoStyle {
     background-color: #FFFFFF;
     -fx-background-color: #FFFFFF;
 }
 
-.titleLabelVideo{
+.titleLabelVideo {
     fill: #1F2937;
     -fx-fill: #1F2937;
 }
 
-.descriptionLabelVideo{
+.descriptionLabelVideo {
     -fx-text-fill: #6B7280;
 }
 
-.cardVideoStyle:hover{
+.cardVideoStyle:hover {
     background-color: #f0f0f0;
     -fx-background-color: #f0f0f0;
 }
 
-.root{
+.root {
     background-color: grey;
     -fx-background-color: grey;
 }
-   
-.vboxRoot{
+
+.vboxRoot {
     background-color: white;
     -fx-background-color: white;
 }
 
-.hboxContainerHome{
+.hboxContainerHome {
     background-color: white;
     -fx-background-color: white;
 }
 
-.regionContent{
+.regionContent {
     background-color: #ecf0f1;
     -fx-background-color: #ecf0f1;
 }
 
-.menuItemSearching{
-    background-color:black;
-    -fx-background-color:black;
+.menuItemSearching {
+    background-color: black;
+    -fx-background-color: black;
 }
 
 /*Abouts.css*/
@@ -313,21 +313,21 @@
 }
 
 
-.borderBarAbout{
-    background-color:white;
-    -fx-background-color:white;
+.borderBarAbout {
+    background-color: white;
+    -fx-background-color: white;
 }
 
-.helpTitle{
+.helpTitle {
     -fx-text-fill: black;
 }
 
-.helpTitleDesc{
+.helpTitleDesc {
     -fx-text-fill: black;
 }
 
 
-.helpSearchBar{
+.helpSearchBar {
     background-color: white;
     -fx-background-color: white;
 }
@@ -356,7 +356,8 @@
 
 /*Contacts.css*/
 
-.text-fieldContact, .text-areaContact {
+.text-fieldContact,
+.text-areaContact {
     background-color: white;
     border-color: #cccccc;
     -fx-background-color: white;
@@ -366,13 +367,13 @@
 
 
 .buttonContact {
-    background-color:  #4a90e2;
-    -fx-background-color:  #4a90e2;
+    background-color: #4a90e2;
+    -fx-background-color: #4a90e2;
 }
 
-.vboxVignetteHome{
-    border-color:  #f1f1f1;
-    -fx-border-color:  #f1f1f1;
+.vboxVignetteHome {
+    border-color: #f1f1f1;
+    -fx-border-color: #f1f1f1;
 }
 
 .buttonContact:hover {
@@ -388,43 +389,52 @@
 
 
 .titled-pane {
-    background-color: white;        
-    border-color: #3D8DF5;          
-    -fx-background-color: white;        /* colore sfondo */
-    -fx-border-color: #3D8DF5;          /* colore bordo */
+    background-color: white;
+    border-color: #3D8DF5;
+    -fx-background-color: white;
+    /* colore sfondo */
+    -fx-border-color: #3D8DF5;
+    /* colore bordo */
 
 }
 
 /* Stile della "barra titolo" */
-.titled-pane > .title {
-    background-color: linear-gradient(to right, #3D8DF5, #5AB4FF); /* gradiente */
+.titled-pane>.title {
+    background-color: linear-gradient(to right, #3D8DF5, #5AB4FF);
+    /* gradiente */
     -fx-text-fill: white;
 }
 
-.titled-pane > .content {
-    background-color: white; 
-    -fx-text-fill: #333333; /* colore testo */
-    -fx-background-color: white;  /* colore sfondo */
+.titled-pane>.content {
+    background-color: white;
+    -fx-text-fill: #333333;
+    /* colore testo */
+    -fx-background-color: white;
+    /* colore sfondo */
 }
 
-.titled-pane > .ancorpane {
-    -fx-background-color: white;  /* colore sfondo */
-    background-color: white;      /* colore sfondo */
+.titled-pane>.ancorpane {
+    -fx-background-color: white;
+    /* colore sfondo */
+    background-color: white;
+    /* colore sfondo */
 }
 
-.labelLibrary{
+.labelLibrary {
     -fx-text-fill: #333333
 }
 
-.recapHBOX{
-    -fx-background-color:  #e8f4f8;
-    background-color:  #e8f4f8;
+.recapHBOX {
+    -fx-background-color: #e8f4f8;
+    background-color: #e8f4f8;
 }
 
 /* La freccetta */
-.titled-pane > .title > .arrow-button > .arrow {
-        background-color: white;  /* cambia colore freccia */
-    -fx-background-color: white;  /* cambia colore freccia */
+.titled-pane>.title>.arrow-button>.arrow {
+    background-color: white;
+    /* cambia colore freccia */
+    -fx-background-color: white;
+    /* cambia colore freccia */
 }
 
 /*Impostazioni.css*/
@@ -436,7 +446,7 @@
     -fx-background-color: #ccc;
 }
 
-.switch-buttonSettings:selected{
+.switch-buttonSettings:selected {
     -fx-background-color: #4caf50;
     background-color: #4caf50;
 }
@@ -449,22 +459,22 @@
 }
 
 
-.borderBarSettings{
+.borderBarSettings {
     border-color: grey;
     -fx-border-color: grey;
 }
 
 
-.title-labelSettings{
+.title-labelSettings {
     -fx-text-fill: black;
 }
 
-.library-name{
+.library-name {
     -fx-text-fill: black;
 }
 
 
-.textfield-settings{
+.textfield-settings {
     background-color: #f4f4f4;
     border-color: #cccccc;
     -fx-background-color: #f4f4f4;
@@ -473,36 +483,38 @@
 }
 
 .navBarSettings {
-    background-color:  transparent; /* Colore di sfondo chiaro */
-    -fx-background-color:  transparent; /* Colore di sfondo chiaro */
+    background-color: transparent;
+    /* Colore di sfondo chiaro */
+    -fx-background-color: transparent;
+    /* Colore di sfondo chiaro */
     -fx-text-fill: black;
 }
 
-.windowsSettingsBar{
+.windowsSettingsBar {
     border-color: black;
     background-color: white;
     -fx-border-color: black;
     -fx-background-color: transparent;
-    -fx-text-fill:black;
+    -fx-text-fill: black;
 }
 
-.vboxWindowsSettings{
+.vboxWindowsSettings {
     border-color: black;
-    background-color:white;
-    -fx-background-color:white;
+    background-color: white;
+    -fx-background-color: white;
     -fx-border-color: black;
 }
 
-.labelSettingsTheme{
+.labelSettingsTheme {
     -fx-text-fill: black;
 }
 
-.labelDescSettingsTheme{
+.labelDescSettingsTheme {
     -fx-text-fill: black;
 }
 
 
-.button-filledSettings{
+.button-filledSettings {
     background-color: transparent;
     border-color: transparent;
     -fx-text-fill: #3D8DF5;
@@ -510,97 +522,97 @@
     -fx-border-color: transparent;
 }
 
-.noSelectedButton{
+.noSelectedButton {
     background-color: transparent;
     border-color: white;
     -fx-background-color: transparent;
     -fx-border-color: white;
 }
 
-.selectedButton{
-    background-color: white; 
+.selectedButton {
+    background-color: white;
     border-color: black;
-    -fx-background-color: white; 
+    -fx-background-color: white;
     -fx-border-color: black;
 }
 
 /*Login.css*/
 
-.labelColorLogin{
-    fill:#009dc7;
+.labelColorLogin {
+    fill: #009dc7;
     -fx-fill: #009dc7;
 }
 
-.stackPaneColorLogin{
+.stackPaneColorLogin {
     background-color: linear-gradient(to bottom, #B3D4FC, #005EA6);
     -fx-background-color: linear-gradient(to bottom, #B3D4FC, #005EA6);
 }
 
-.vboxLogin{
+.vboxLogin {
     background-color: white;
     -fx-background-color: white;
 }
 
-.loginbuttonLogin{
+.loginbuttonLogin {
     -fx-background-color: #2c88cc;
     background-color: #2c88cc;
 }
 
-.buttonBack{
+.buttonBack {
     background-color: transparent;
-    border-color:  #D4E4FA;
+    border-color: #D4E4FA;
     -fx-background-color: transparent;
-    -fx-border-color:  #D4E4FA;
-    -fx-text-fill:black;
+    -fx-border-color: #D4E4FA;
+    -fx-text-fill: black;
 }
 
-.labelTitleDesc{
-    -fx-text-fill:black;
+.labelTitleDesc {
+    -fx-text-fill: black;
 }
 
 
-.regionLogin{
+.regionLogin {
     background-color: #ecf0f1;
     -fx-background-color: #ecf0f1;
 }
 
-.checkboxLoggedIn{
+.checkboxLoggedIn {
     -fx-text-fill: black;
 }
 
 
 
 /*Registration.css*/
-.button-registration{
+.button-registration {
     background-color: #3d8df5;
     -fx-background-color: #3d8df5;
-    -fx-text-fill:white;
+    -fx-text-fill: white;
 }
 
-.labelRegister{
-    -fx-text-fill:black;
+.labelRegister {
+    -fx-text-fill: black;
 }
 
-.labelRegisterDesc{
-    -fx-text-fill:black;
+.labelRegisterDesc {
+    -fx-text-fill: black;
 }
 
-.notValid{
-    -fx-text-fill:black;
+.notValid {
+    -fx-text-fill: black;
 }
 
-.title-registration{
+.title-registration {
     -fx-text-fill: #3d8df5;
 }
 
-.button-nopeRegistration{
+.button-nopeRegistration {
     background-color: #90a4ae;
     -fx-background-color: #90a4ae;
-    -fx-text-fill:black;
+    -fx-text-fill: black;
 }
 
 
-.textareasRegistration{
+.textareasRegistration {
     background-color: #f1f1f1;
     -fx-background-color: #f1f1f1;
 }
@@ -614,16 +626,18 @@
     -fx-border-color: #186ADE;
 }
 
-.pretty-progressSplashScreen{
-    -fx-accent: #00ADB5; /* accento elegante */
-    -fx-control-inner-background: #eeeeee; /* grigio chiaro */
+.pretty-progressSplashScreen {
+    -fx-accent: #00ADB5;
+    /* accento elegante */
+    -fx-control-inner-background: #eeeeee;
+    /* grigio chiaro */
 
 }
 
 /*Styles.css*/
 
-.fontawesomeDefault{
-    fill:black;
+.fontawesomeDefault {
+    fill: black;
     -fx-fill: black;
 }
 
@@ -632,7 +646,7 @@
     -fx-fill: black;
 }
 
-.button-filledHome{
+.button-filledHome {
     background-color: #4A90E2;
     -fx-background-color: #4A90E2;
 }
@@ -643,13 +657,14 @@
     -fx-background-color: #75B1FF;
 }
 
-.menuButton{
+.menuButton {
     -fx-background-color: #75B1FF;
     background-color: #75B1FF;
 }
 
 .menuButton .label {
-    -fx-text-fill: black; /* Colore del testo */
+    -fx-text-fill: black;
+    /* Colore del testo */
 }
 
 .menuButton .arrow {
@@ -671,22 +686,27 @@
 
 
 .navBarHome {
-    background-color:  white; /* Colore di sfondo chiaro */
-    border-color: #ccc; /* Colore del bordo */
-    -fx-background-color:  white; /* Colore di sfondo chiaro */
-    -fx-border-color: #ccc; /* Colore del bordo */
+    background-color: white;
+    /* Colore di sfondo chiaro */
+    border-color: #ccc;
+    /* Colore del bordo */
+    -fx-background-color: white;
+    /* Colore di sfondo chiaro */
+    -fx-border-color: #ccc;
+    /* Colore del bordo */
 
 }
 
 .searchBar {
-    background-color:  #fafafa;
-    -fx-background-color:  #fafafa; /* Colore di sfondo chiaro */
+    background-color: #fafafa;
+    -fx-background-color: #fafafa;
+    /* Colore di sfondo chiaro */
 }
 
 
 .searchBarButtonHome {
-    background-color:  transparent;
-    -fx-background-color:  transparent;
+    background-color: transparent;
+    -fx-background-color: transparent;
     -fx-border-color: black;
     border-color: black;
     border-radius: 12px;
@@ -694,19 +714,19 @@
     -fx-text-fill: black;
 }
 
-.vboxLibrary{
+.vboxLibrary {
     background-color: white;
     -fx-background-color: white
 }
 
-.scrollPaneLibrary{
+.scrollPaneLibrary {
     -fx-background-color: transparent;
     background-color: transparent;
 }
 
-.categoriesMenu{
-    background-color:  transparent;
-    -fx-background-color:  transparent;
+.categoriesMenu {
+    background-color: transparent;
+    -fx-background-color: transparent;
 }
 
 .categoriesMenu .label {
@@ -719,9 +739,9 @@
     -fx-border-color: #cc0000;
 }
 
-.hboxContainerHome{
-    background-color:white;
-    -fx-background-color:white;
+.hboxContainerHome {
+    background-color: white;
+    -fx-background-color: white;
 }
 
 .labelTitleHome {
@@ -732,13 +752,13 @@
     -fx-text-fill: black;
 }
 
-.exitRegion{
-    background-color:white;
-    -fx-background-color:white;
+.exitRegion {
+    background-color: white;
+    -fx-background-color: white;
 }
 
 
-.buttonSettingsClickedHome{
+.buttonSettingsClickedHome {
     background-color: #00ADB5;
     -fx-background-color: #00ADB5;
 }
@@ -748,7 +768,7 @@
     -fx-border-color: blue;
 }
 
-.vboxDashboard{
+.vboxDashboard {
     background-color: white;
     -fx-background-color: white;
 }
@@ -838,10 +858,13 @@
     -fx-background-color: #2C6FDB;
 }
 
-.allReviewsButton{
-    border-color:  #75B1FF; /* Colore turchese */
-    -fx-text-fill: black; /* Colore del testo */
-    -fx-border-color:  #75B1FF; /* Colore turchese */
+.allReviewsButton {
+    border-color: #75B1FF;
+    /* Colore turchese */
+    -fx-text-fill: black;
+    /* Colore del testo */
+    -fx-border-color: #75B1FF;
+    /* Colore turchese */
 }
 
 .vboxAllReviews {
@@ -849,33 +872,33 @@
     -fx-background-color: white;
 }
 
-.categoriesComboBox{
+.categoriesComboBox {
     -fx-background-color: #ffffff;
     background-color: #ffffff;
 }
 
-.scrollPaneAllReviews{
+.scrollPaneAllReviews {
     -fx-background-color: white;
     background-color: white;
 }
 
-.hbox2AllReviews{
-    background-color:  #e9ecef;
-    -fx-background-color:  #e9ecef;
+.hbox2AllReviews {
+    background-color: #e9ecef;
+    -fx-background-color: #e9ecef;
 }
 
 
-.bookdetailsimpleAnchorPane{
+.bookdetailsimpleAnchorPane {
     background-color: white;
     -fx-background-color: white;
 }
 
-.bookdetailsimpleVBOX{
+.bookdetailsimpleVBOX {
     background-color: white;
     -fx-background-color: white;
 }
 
-.bookdetailsimpleHBOX{
+.bookdetailsimpleHBOX {
     background-color: #f8f9fa;
     border-color: #dee2e6;
     border-width: 0 0 1 0;
@@ -884,7 +907,7 @@
     -fx-border-width: 0 0 1 0;
 }
 
-.bookdetailsLabel{
+.bookdetailsLabel {
     font-weight: bold;
     font-size: 14px;
     -fx-font-weight: bold;
@@ -892,7 +915,7 @@
     -fx-text-fill: #333;
 }
 
-.bookdetailsLabeldesc{
+.bookdetailsLabeldesc {
     font-weight: bold;
     font-size: 12px;
     -fx-font-weight: bold;
@@ -900,27 +923,27 @@
     -fx-text-fill: #333;
 }
 
-.bookdetailsLabelsuperdesc{
+.bookdetailsLabelsuperdesc {
     font-size: 12px;
     -fx-font-size: 12px;
     -fx-text-fill: #666;
 }
 
-.bookdetailsLabelitalic{
+.bookdetailsLabelitalic {
     -fx-text-fill: #495057;
 }
 
-.bookdetailsimpleVBOX2{
+.bookdetailsimpleVBOX2 {
     background-color: #e9ecef;
     -fx-background-color: #e9ecef;
 }
 
 
-hboxAllReviews{
-   background-color:  #f8f9fa;
-   border-color:  #dee2e6;
-   -fx-background-color:  #f8f9fa;
-   -fx-border-color:  #dee2e6;
+hboxAllReviews {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
 }
 
 /* Stili per BookDetailController (BookDetailView.fxml) */
@@ -1241,7 +1264,7 @@ VBox.suggestionsContainer VBox:hover {
 }
 
 .libraryImageShadow {
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 4, 0, 0, 2);
 }
 
 /* Recommendation Card Styles - Light Mode */
@@ -1261,11 +1284,11 @@ VBox.suggestionsContainer VBox:hover {
     border-color: #3498db;
     -fx-background-color: #f8f9fa;
     -fx-border-color: #3498db;
-    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.2), 6, 0, 0, 3);
+    -fx-effect: dropshadow(three-pass-box, rgba(52, 152, 219, 0.2), 6, 0, 0, 3);
 }
 
 .recommendationBookImage {
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 4, 0, 0, 2);
 }
 
 .recommendationTitleLabel {
@@ -1352,3 +1375,33 @@ VBox.suggestionsContainer VBox:hover {
     -fx-text-fill: #6c757d;
 }
 
+.textfield-about {
+    border-color: #ced4da;
+    background-color: white;
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-text-fill: #495057;
+}
+
+.textfield-about .prompt-text {
+    -fx-text-fill: #6c757d;
+}
+
+
+
+.textfield-about:focused {
+    border-color: #009dc7;
+    -fx-border-color: #009dc7;
+}
+
+.reviewText {
+    background-color: transparent;
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.buttonReview{
+    background-color: #4A90E2;
+    -fx-background-color: #4A90E2;
+    -fx-text-fill: #FFFFFF;
+}
